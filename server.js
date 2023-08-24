@@ -3,13 +3,13 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
+// const routes = reqier(controller)
 const sequelize = require('./config/connection');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
+const hbs = exphbs.create({});
 // cookies 
 
 const sess = {
@@ -25,10 +25,9 @@ const sess = {
     }),
 
 };
+app.use(session(sess));
 
-
-
-
+// handle bars 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
