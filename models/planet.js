@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Planet extends module{}
+class Planet extends module {}
 
 Planet.init(
     {
@@ -23,9 +23,12 @@ Planet.init(
           },
           planet_temperature: {
             type: DataTypes.STRING
-          }
+          },
+          number_moons: {
+            type:DataTypes.INTEGER
+          },
 
-    }
-)
+    },
+);
 
 module.exports = Planet; 
