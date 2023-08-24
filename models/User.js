@@ -1,13 +1,11 @@
 const {Model, DataTypes} = require("sequelize");
-const brypt = require('bcrypt');
-const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 
-class User extends Model { // link login pw in js later 
+class User extends Model { 
     checkpassword(loinpw){
-        return brypt.compareSync(loinpw, this.password);
+        return bcrypt.compareSync(loinpw, this.password);
     }
 }
 
@@ -28,12 +26,10 @@ User.init (
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-              len: [20],
+              len: [8,20],
             },
           }, 
-          user_photo: {
-            type: DataTypes.STRING
-          }
+          
       
 
 },
@@ -48,7 +44,7 @@ User.init (
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'user',
+      modelName: 'User',
     }
 );
 
