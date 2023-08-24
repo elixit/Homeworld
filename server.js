@@ -10,7 +10,23 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 
-// add cookies here 
+// cookies 
+
+const sess = {
+    secret: 'Super secret secret',
+    cookie: {
+        maxAge: 60 * 60 * 1000,
+        httpOnly:true,
+        secure:false,
+        sameSite:'strict',
+    },
+    store: new SequelizeStore({
+        db:sequelize,
+    }),
+
+};
+
+
 
 
 app.engine('handlebars', hbs.engine);

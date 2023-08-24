@@ -20,7 +20,11 @@ Planet.init(
           planet_distance: {
             type:DataTypes.STRING
 
+          },
+          planet_temperature: {
+            type: DataTypes.STRING
           }
+
     }
 )
 
