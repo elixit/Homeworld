@@ -1,0 +1,106 @@
+#menu {
+    display: flex;
+    justify-content: space-between;
+}
+#logo {
+    display: inline-flex;
+    height: 30%;
+    width: 30%;
+}
+#community {
+    height: 50px;
+    width: 300px;
+    margin-top: 100px;
+    background-color: blue;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 40px;
+    transition-duration: 0.4s;
+}
+#community:hover {
+    background-color: lightcyan;
+    color: black;
+}
+#explore {
+    height: 50px;
+    width: 300px;
+    margin-top: 100px;
+    background-color: blue;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 40px;
+    transition-duration: 0.4s;
+}
+#explore:hover {
+    background-color: lightcyan;
+    color: black;
+}
+
+#username {
+    font-family: 'Roboto Condensed', sans serif;
+
+}
+
+CSS
+#menu {
+    display: flex;
+    justify-content: space-between;
+}
+#logo {
+    display: inline-flex;
+    height: 30%;
+    width: 30%;
+}
+#community {
+    height: 50px;
+    width: 300px;
+    margin-top: 100px;
+    background-color: blue;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 40px;
+    transition-duration: 0.4s;
+}
+#community:hover {
+    background-color: green;
+    color: white;
+}
+#explore {
+    height: 50px;
+    width: 300px;
+    margin-top: 100px;
+    background-color: blue;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 40px;
+    transition-duration: 0.4s;
+}
+#explore:hover {
+    background-color: green;
+    color: white;
+}
+#save {
+    height: 40px;
+    width: 100px;
+    background-color: blue;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    transition-duration: 0.4s;
+}
+#save:hover {
+    background-color: green;
+    color: white;
+}
+/* Profile photo */
+#personalInfo {
+    display: flex;
+    justify-content: flex-start;
+}
+#username {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 24px;
+}
+#image {
+    margin-bottom: 20px;
+}
