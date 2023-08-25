@@ -1,74 +1,59 @@
-<h1>Homeworld</h1>
-{{#each blogs}}
-  <section class="card">
-    <a href="/blogs/{{id}}" class="card-body">
-        <h3 class="card-title">{{title}}</h3> 
-        <div id="menu"></div>
-        <img id="logo" src="assets/images/titleBl.png"> 
-        <h5>Posted by {{user.username}} on {{createdAt}}</h5>
-        <p class="card-text">{{content}}</p>
-    </a>
-  </section>
-{{/each}}
-
-{{!-- {{circle back to image}} --}}
-
-<p>
-        <hr>
-    </p>
-    <p>
-    <div id="username">{{user.username}}</div>
-    <p>
-    <div class="userPicture">
-    <p>
-    <img src="./assets/images/unknown.jpg" style="height:150px; border-radius: 50%; border: 10px solid;" alt="This is your profile image.">
-    <p>
-    <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
-    </div>
+    <img class="bg" src="/assets/images/background.jpg" />
 
     <!-- Menu -->
     <div id="menu">
-    <img id="logo" src="./assets/images/titleBl.png">
+    <img id="logo" src="./assets/images/titleWh.png">
     <button id="community">Community</button>
     <button id="explore">Explore</button>
     </div>
+
     <p>
         <hr>
     </p>
-    <p>
+
+    <img id="hud" src="./assets/images/hud.png">
+
+<div id="activeUserInfo">
+
     <!-- User Information -->
-<div class="personalInfo">
-        {{user.username}}
-</div>
-<div id="personalInfo">
-    <p>
-        
     <div class="userPicture">
-    <p>
-    <img src="./assets/images/unknownPhoto.jpg" style="height:150px; border-radius: 50%; border: 2px solid;" alt="This is your picture.">
-        <p>
-            <input id="image" type="file" name="profile_photo" placeholder="Photo" required="" capture>
-        </p>
-    </div>
+    
+        {{user.username}}
+        <p>            
+        <img src="./assets/images/unknownPhoto.jpg">
+        <p>       
+        <div id="browse">
+            <input type="file">
+        </div>
+
+    </div>    
+
     <div class="planetPicture">
+
+        {{user.homeplanet}}
         <p>
-            <img src="./assets/images/unknownPlanet.jpg" style="height:150px; border: 2px solid;" alt="This is your homeworld.">
-            <p>
-            <label for="homeworld">Choose a homeworld:</label>
-            <select name="homeworld">
-            <option value="None">None</option>
-            <option value="Mercury">Mercury</option>
-            <option value="Venus">Venus</option>
-            <option value="Earth">Earth</option>
-            <option value="Mars">Mars</option>
-            <option value="Jupiter">Jupiter</option>
-            <option value="Saturn">Saturn</option>
-            <option value="Uranus">Uranus</option>
-            <option value="Neptune">Neptune</option>
-    </select>
-        </p>
+        <img src="./assets/images/unknownPlanet.jpg">
+        <p>                    
+        Your Homeworld: &nbsp
+            <select id="homeworld"> 
+            <option value="0">None</option> 
+            <option value="1">Mercury</option> 
+            <option value="2">Venus</option> 
+            <option value="3">Earth</option> 
+            <option value="4">Mars</option> 
+            <option value="5">Jupiter</option> 
+            <option value="6">Saturn</option> 
+            <option value="7">Uranus</option> 
+            <option value="8">Neptune</option> 
+            </select>            
+        <p>     
+
     </div>
+
 </div>
+
 <p>
     <button id="save">Save</button>
 </p>
+
+<div class="vl"></div>
