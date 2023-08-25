@@ -13,7 +13,7 @@ const hbs = exphbs.create({});
 // cookies 
 
 const sess = {
-    secret: 'Super secret secret',
+    secret: 'Homeworld secret sh',
     cookie: {
         maxAge: 60 * 60 * 1000,
         httpOnly:true,
