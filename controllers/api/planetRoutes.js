@@ -1,6 +1,8 @@
 const router  = require("express").Router();
 const {Planet} = require('../../models');
 
+// URL /api/planets
+
 router.get('/', async (req, res) => {
     // find all planets
     try {
