@@ -1,6 +1,4 @@
 const router = require('../controllers');
-const { route } = require('../controllers');
-const withAuth = require('../utils/auth');
 const User = require('./User'); 
 const Planet = require('./planet');
 

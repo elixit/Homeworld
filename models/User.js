@@ -29,9 +29,10 @@ User.init (
               len: [8,20],
             },
           }, 
+          planet_id: {
+            type: DataTypes.INTEGER,
+          }
           
-      
-
 },
 {
     hooks: {
