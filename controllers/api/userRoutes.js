@@ -1,5 +1,6 @@
 const router  = require("express").Router();
 const {User} = require('../../models');
+const { update } = require("../../models/User");
 
 // /api/users/ url to creat user 
 
@@ -69,6 +70,85 @@ router.post('/logout', (req, res)=> {
     } else{
 
         res.status(400).end();
+    }
+});
+
+// get all users 
+router.get('/', async (req, res) => {
+    try {
+        userData = await User.findAll();
+
+        res.status(200).json(userData);
+
+        if (!userData) {
+            res.status(400).json({ message: 'No User Found'});
+            return;
+        }
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error); 
+    }
+});
+
+// get one user 
+
+router.get('/:id', async (req, res) => {
+    try { 
+        const userData = await User.findOne();
+
+        res.status(200).json(userData); 
+
+        if (!userData) {
+            res.status(400).json({ message: 'No User Found'});
+            return;
+        }
+        
+    } catch (error) {
+        console.log(error); 
+        res.status(500).json(error); 
+        
+    }
+});
+
+// update user info 
+
+router.put('/:id', async (res, req) => {
+    try {
+        const userData = await User.update(req.body, {
+            where:{
+                id: req.params.id
+            },
+        });
+        if (!userData){
+            res.status(400).json({ message: 'No User'});
+            return;
+        }
+        res.status(200).json(userData);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+        
+    }
+});
+
+// delete user
+
+router.delete('/:id', async (req, res) => {
+    try { 
+        const userData = await User.destroy({
+            where: { id: req.params.id }
+        })
+
+        if (!userData) {
+            res.status(400).json({message: 'No User'}); 
+            return;
+        }
+        res.status(200).json(userData); 
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
     }
 });
 
