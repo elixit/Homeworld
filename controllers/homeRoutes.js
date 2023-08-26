@@ -30,5 +30,14 @@ router.get('/login', (res, req) => {
     res.render('login');
 })
 
+// Added this block for login handlebars
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('signup');
+  });
 
 module.exports = router;
