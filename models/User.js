@@ -12,8 +12,7 @@ class User extends Model {
 User.init (
     {
         id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+            type: DataTypes.INTEGER,            
             primaryKey: true,
             autoIncrement: true,
           },
@@ -26,12 +25,12 @@ User.init (
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-              len: [8,20],
+              len: [4,20],
             },
           }, 
           planet_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
           },
           
 },
