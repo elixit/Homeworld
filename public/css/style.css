@@ -29,6 +29,64 @@ hr, .vl {
   z-index: 3;
 }
 
+#offlineMenu {
+  display: inline-flex;
+  position: absolute;  
+}
+
+#menuLogin {
+    display: inline-flex;
+    position: absolute;    
+    font-size: 28px;
+    color: white;    
+    margin-top: 60px;
+    margin-left: 800px;
+    --b: 0.1em;
+    --c: #eeff00;
+    text-decoration: none;  
+    color: white;
+    padding-block: var(--b);
+    background: 
+        linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+        linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+    transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+    z-index: 3;
+  }
+  
+  #menuLogin:hover {
+    --_p: 100%;
+    --_s: .3s;
+  }
+
+  #menuSignup {
+    display: inline-flex;
+    position: absolute;    
+    font-size: 28px;
+    color: white;    
+    margin-top: 60px;
+    margin-left: 1000px;
+    --b: 0.1em;
+    --c: #eeff00;
+    text-decoration: none;  
+    color: white;
+    padding-block: var(--b);
+    background: 
+        linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+        linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+    transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+    z-index: 3;
+  }
+  
+  #menuSignup:hover {
+    --_p: 100%;
+    --_s: .3s;
+  }
+
+
 /* Flashing buttons */
 
 #community {
@@ -346,7 +404,7 @@ input[type='file'] {
 
 #hudLogin {
   display: flex;
-  position: absolute;
+  position: absolute;  
   margin-top: 160px;
   margin-left: 20%;
   z-index: 2;
