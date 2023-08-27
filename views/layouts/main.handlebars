@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homeworld</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    <img class="bg" src="/public/images/background.jpg" />
+    <img class="bg" src="/images/background.jpg" />
 
-    <img id="logo" src="./public/images/titleWh.png">
+    <img id="logo" src="/images/titleWh.png" />
         
         {{#if loggedIn}}
             <div id="menu">                
@@ -25,6 +24,7 @@
                 <p>
                 <a href="/login">Login</a>
                 <a href="/signup">Signup</a>
+            </div>
         {{/if}}  
     
     <main>
@@ -34,7 +34,7 @@
     </main>
 
     {{#if loggedIn}}
-        <script src="/public/javascript/logout.js"></script>
+        <script src="/javascript/logout.js"></script>
     {{/if}}
 
 </body>
