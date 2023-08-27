@@ -4,8 +4,8 @@ const sequelize = require('../config/connection');
 
 
 class User extends Model { 
-    checkpassword(loinpw){
-        return bcrypt.compareSync(loinpw, this.password);
+    checkpassword(loginpw){
+        return bcrypt.compareSync(loginpw, this.password);
     }
 }
 
@@ -33,6 +33,12 @@ User.init (
             type: DataTypes.INTEGER,
             allowNull: false,
           },
+          user_photo_path: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: "public/images/unknownPhoto.jpg",
+
+          }
           
 },
 {
