@@ -37,7 +37,7 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));  // going to bring this back when we have a public folder
+app.use(express.static('public'));  // going to bring this back when we have a public folder
 
 app.use(routes);
 

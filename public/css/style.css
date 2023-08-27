@@ -1,11 +1,14 @@
 * {    
   color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 .bg {
   position: absolute;
+  width: 100%;
   opacity: 100%;
   filter: brightness(50%);
+  z-index: -50;
 }
 
 hr, .vl {    
@@ -26,6 +29,80 @@ hr, .vl {
   width: 25%;
   z-index: 3;
 }
+
+#offlineLogo {
+  display: inline-flex;
+  height: 25%;
+  width: 25%;
+  margin-left: 219px;
+  z-index: 3;
+} 
+
+.card-text {
+  color: white;
+  font-size: 24px;
+  width: 600px;
+}
+
+/* Menus */
+
+#offlineMenu {
+  display: inline-flex;
+  position: absolute;  
+}
+
+#menuLogin {
+    display: inline-flex;
+    position: absolute;    
+    font-size: 28px;
+    color: white;    
+    margin-top: 60px;
+    margin-left: 500px;
+    --b: 0.1em;
+    --c: #eeff00;
+    text-decoration: none;  
+    color: white;
+    padding-block: var(--b);
+    background: 
+        linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+        linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+    transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+    z-index: 3;
+  }
+  
+  #menuLogin:hover {
+    --_p: 100%;
+    --_s: .3s;
+  }
+
+  #menuSignup {
+    display: inline-flex;
+    position: absolute;    
+    font-size: 28px;
+    color: white;    
+    margin-top: 60px;
+    margin-left: 700px;
+    --b: 0.1em;
+    --c: #eeff00;
+    text-decoration: none;  
+    color: white;
+    padding-block: var(--b);
+    background: 
+        linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+        linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+    transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+    z-index: 3;
+  }
+  
+  #menuSignup:hover {
+    --_p: 100%;
+    --_s: .3s;
+  }
+
 
 /* Flashing buttons */
 
@@ -124,7 +201,7 @@ hr, .vl {
   opacity: 65%;
 }
 
-/* Active User Information */
+/* Home view > User information */
 
 #hud {
   display: flex;
@@ -132,22 +209,6 @@ hr, .vl {
   margin-top: 60px;
   margin-left: 30%;
   z-index: 2;
-}
-
-#hudRegister {
-display: flex;
-position: absolute;
-margin-top: 160px;
-margin-left: 20%;
-z-index: 2;
-}
-
-#hudSignup {
-display: flex;
-position: absolute;
-margin-top: 160px;
-margin-left: 20%;
-z-index: 2;
 }
 
 #activeUserInfo {
@@ -228,7 +289,7 @@ input[type='file'] {
   top: 37%;
 }
 
-/* Decorative Status Bars  */
+/* Home and Community views > Decorative status bars  */
 
 /* Bar Graph Horizontal */
 .bar-graph .status {
@@ -358,6 +419,14 @@ input[type='file'] {
 
 /* Login page */
 
+#hudLogin {
+  display: flex;
+  position: absolute;  
+  margin-top: 160px;
+  margin-left: 20%;
+  z-index: 2;
+}
+
 #login {
   position: absolute;
   margin-top: 250px;
@@ -369,13 +438,14 @@ input[type='file'] {
   color: black;
 }
 
-.card-text {
-  color: white;
-  font-size: 24px;
-  width: 600px;
+#login h1 {
+  margin-top: -110px;
+  margin-left: 180px;
+  padding-bottom: 110px;  
 }
 
-input {
+#login input {
+  color: black;
   width: 300px;
 }
 
@@ -385,7 +455,9 @@ input {
   font-size: 18px;    
   margin-top: -80px;
   margin-left: 450px;
-  border-width: 0px;    
+  border-width: 0px;
+  height: 30px;
+  width: 100px;
   align-items: center;    
   border-style: ridge;
   background-color: rgb(255, 255, 255);
@@ -397,40 +469,33 @@ input {
   color: white;
 }
 
-#signupLink {
-  display: flex;
-  position: absolute;    
-  font-size: 28px;
-  color: white;    
-  margin-top: 60px;
-  margin-left: -160px;
-  --b: 0.1em;   /* the thickness of the line */
-  --c: #eeff00; /* the color */
-  text-decoration: none;  
-  color: white;
-  padding-block: var(--b);
-  background: 
-      linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
-      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
-  -webkit-background-clip: text,padding-box;
-        background-clip: text,padding-box;
-  transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
-  z-index: 3;
-}
-
-#signupLink:hover {
-  --_p: 100%;
-  --_s: .3s;
-}
-
 /* Signup page */
 
-#signup {
+#hudRegister {
+  display: flex;
+  position: absolute;
+  margin-top: 160px;
+  margin-left: 20%;
+  z-index: 2;
+}
+
+#register {  
   position: absolute;
   margin-top: 250px;
   margin-left: 515px;    
-  z-index: 3;
+  z-index: 3;    
+}
+
+#register h1 {
+  margin-top: -110px;
+  margin-left: 160px;
+  padding-bottom: 110px;
+  
+}
+
+#register input {
   color: black;
+  width: 300px;
 }
 
 #signup input {
@@ -438,48 +503,92 @@ input {
 }
 
 
-#signupForm button {
+#registerForm button {
   position: absolute;
   color: black;
   font-size: 18px;    
   margin-top: -80px;
   margin-left: 450px;
   border-width: 0px;    
+  height: 30px;
+  width: 100px;
   align-items: center;
   border-style: ridge;
   background-color: rgb(255, 255, 255);
   transition-duration: 0.4s;   
 }
 
-#signupForm button:hover {
+#registerForm button:hover {
   background-color: rgb(4, 0, 255);
   color: white;
 }
 
-#loginLink {
+/* Planet page */
+
+#planetRow {
   display: flex;
-  position: absolute;    
-  font-size: 28px;
-  color: white;    
-  margin-top: 60px;
-  margin-left: -160px;
-  --b: 0.1em;   /* the thickness of the line */
-  --c: #eeff00; /* the color */
-  text-decoration: none;  
-  color: white;
-  padding-block: var(--b);
-  background: 
-      linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
-      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
-  -webkit-background-clip: text,padding-box;
-        background-clip: text,padding-box;
-  transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
-  z-index: 3;
+  position: absolute;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+  z-index: -1;    
 }
 
-#loginLink:hover {
-  --_p: 100%;
-  --_s: .3s;
+#planet {
+  position: absolute;
+  margin-top: -50px;    
+  height: 500px;
+}
+
+#hudPlanet {
+  display: flex;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 23%;
+  z-index: 2;
+}
+
+#hudPlanetSideA {
+  display: flex;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 30px;
+  z-index: 2;
+}
+
+#hudPlanetSideB {
+  display: flex;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 79%;
+  z-index: 2;
+}
+
+#planetFacts {
+  position: absolute;
+  height: 350px;
+  width: 200px;    
+  margin-top: 300px;
+  margin-left: 80px;
+  text-align: center;
+}  
+
+#planetComments {
+  position: absolute;
+  height: 350px;
+  width: 725px;    
+  margin-top: 300px;
+  margin-left: 425px;
+  text-align: center;
+}
+
+#planetResidents {
+  position: absolute;
+  height: 350px;
+  width: 200px;    
+  margin-top: 300px;
+  margin-left: 1300px;
+  text-align: center;
 }
 
 
