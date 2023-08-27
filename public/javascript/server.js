@@ -4,8 +4,8 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // const routes = reqier(controller)
-const sequelize = require('./config/connection');
-const routes = require('./controllers');
+const sequelize = require('../../config/connection');
+const routes = require('../../controllers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
