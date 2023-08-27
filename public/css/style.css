@@ -30,6 +30,14 @@ hr, .vl {
   z-index: 3;
 }
 
+#offlineLogo {
+  display: inline-flex;
+  height: 25%;
+  width: 25%;
+  margin-left: 219px;
+  z-index: 3;
+} 
+
 .card-text {
   color: white;
   font-size: 24px;
@@ -49,7 +57,7 @@ hr, .vl {
     font-size: 28px;
     color: white;    
     margin-top: 60px;
-    margin-left: 800px;
+    margin-left: 500px;
     --b: 0.1em;
     --c: #eeff00;
     text-decoration: none;  
@@ -75,7 +83,7 @@ hr, .vl {
     font-size: 28px;
     color: white;    
     margin-top: 60px;
-    margin-left: 1000px;
+    margin-left: 700px;
     --b: 0.1em;
     --c: #eeff00;
     text-decoration: none;  
@@ -426,11 +434,10 @@ input[type='file'] {
   z-index: 3;   
 }
 
-#login-card-title {
-  margin-top: -120px;
-  margin-left: 160px;
-  padding-bottom: 120px;
-  font-size: 48px;  
+#login h1 {
+  margin-top: -110px;
+  margin-left: 180px;
+  padding-bottom: 110px;  
 }
 
 #login input {
@@ -475,11 +482,11 @@ input[type='file'] {
   z-index: 3;    
 }
 
-#register-card-title {
-  margin-top: -120px;
-  margin-left: 140px;
-  padding-bottom: 120px;
-  font-size: 48px;  
+#register h1 {
+  margin-top: -110px;
+  margin-left: 160px;
+  padding-bottom: 110px;
+  
 }
 
 #register input {

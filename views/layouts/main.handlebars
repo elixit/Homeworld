@@ -11,15 +11,15 @@
 </head>
 <body>
     <img class="bg" src="/images/background.jpg" />
-
-    <img id="logo" src="/images/titleWh.png" />
-        
+            
         {{#if loggedIn}}
-            <div id="menu">                
+            <img id="logo" src="/images/titleWh.png" />
+            <div id="menu">
                 <button id="community">Community</button>
                 <button id="explore">Explore</button>
             </div>
         {{else}}
+            <img id="offlineLogo" src="/images/titleWh.png" />
             <section id="offlineMenu">                                
                 <a id="menuLogin" href="/login">Login</a> &nbsp;&nbsp;&nbsp;
                 
