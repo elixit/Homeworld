@@ -33,12 +33,7 @@ User.init (
             type: DataTypes.INTEGER,
             allowNull: false,
           },
-          user_photo_path: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            defaultValue: "public/images/unknownPhoto.jpg",
-
-          }
+      
           
 },
 {

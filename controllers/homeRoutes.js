@@ -3,35 +3,23 @@ const sequelize = require('../config/connection')
 const {User} = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+
+// auth js 
+
+router.get('/', withAuth, async (req, res)=> {
     try {
-          // Retrieve all posts from db
         const userData = await User.findAll({
-            attributes: ['id', 'username', 'password', 'planet_id'],           
-            include: [
-                {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                
-                {
-                    model: User,
-                    attributes: ['planet_id'],
-                },
-            ],
-            order: [['id']],
-        })
-        // Serialize data retrieved
+            attributes: { exclude :['password']},
+            order:[['name', 'ASC']],
+        });
         const user = userData.map((project)=> project.get({plain:true}));
-        console.log(user)
-        // Respond with template to render along with date retrieved
-        res.render('homepage', 
-            { user, 
-            loggedIn: req.session.loggedIn, 
-            username: req.session.username,
-            userId: req.session.userId });
-    } catch (err) {
-        res.status(500).json(err);
+
+        res.render('homepage', {
+            user, log_in: req.session.log_in,
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
     }
 });
 
@@ -41,6 +29,14 @@ router.get('/login', (res, req) => {
         return;
     }
     res.render('login');
+})
+
+router.get('/register', (req, res) => {
+    if (req.session.log_in) {
+        res.redirect('/');
+        return;
+    }
+    res.render('register');
 })
 
 
