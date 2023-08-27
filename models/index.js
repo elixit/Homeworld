@@ -7,11 +7,11 @@ const Planet = require('./planet');
 Planet.belongsTo(User,{
     foreignKey: "planet_id",
     onDelete: "CASCADE"
-})
+});
 
 Planet.hasMany(User,{
     foreignKey: "planet_id",
-})
+});
 
 
 
