@@ -1,5 +1,5 @@
-const router  = require("express").Router();
-const sequelize = require('../config/connection')
+const router  = require('express').Router();
+const sequelize = require('../config/connection');
 const {User} = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -14,7 +14,7 @@ router.get('/', withAuth, async (req, res)=> {
         });
         const user = userData.map((project)=> project.get({plain:true}));
 
-        res.render('homepage', {
+        res.render('home', {
             user, log_in: req.session.log_in,
         });
     } catch (error) {
@@ -37,6 +37,14 @@ router.get('/register', (req, res) => {
         return;
     }
     res.render('register');
+})
+
+router.get('/dashboard', (req, res) => {
+    if (req.session.log_in) {
+        res.redirect('/');
+        return;
+    }
+    res.render('dashboard');
 })
 
 

@@ -1,0 +1,68 @@
+
+
+
+    <div id="shipStatus">
+        <section class="bar-graph bar-graph-horizontal bar-graph-one">
+            <div class="bar-one">
+              <span class="status">Engines</span>
+              <div class="bar" data-percentage="100%"></div>
+            </div>
+            <div class="bar-two">
+              <span class="status">Navigation</span>
+              <div class="bar" data-percentage="100%"></div>
+            </div>
+            <div class="bar-three">
+              <span class="status">Communication</span>
+              <div class="bar" data-percentage="100%"></div>
+            </div>
+            <div class="bar-four">
+              <span class="status">Life Support</span>
+              <div class="bar" data-percentage="100%"></div>
+            </div>
+          </section>
+    </div>
+
+    <img id="hud" src="/images/hud.png">
+
+<div id="activeUserInfo">
+
+    <!-- User Information -->
+    <div class="userPicture">
+    
+        {{user.username}}
+        <p>            
+        <img src="/images/unknownPhoto.jpg">
+        <p>       
+        <div id="browse">
+            <input type="file">
+        </div>
+
+    </div>    
+
+    <div class="planetPicture">
+
+        {{user.homeplanet}}
+        <p>
+        <img src="/images/unknownPlanet.jpg">
+        <p>                    
+        Your Homeworld: &nbsp;
+            <select id="homeworld"> 
+            <option value="0">None</option> 
+            <option value="1">Mercury</option> 
+            <option value="2">Venus</option> 
+            <option value="3">Earth</option> 
+            <option value="4">Mars</option> 
+            <option value="5">Jupiter</option> 
+            <option value="6">Saturn</option> 
+            <option value="7">Uranus</option> 
+            <option value="8">Neptune</option> 
+            </select>            
+        <p>     
+
+    </div>
+
+</div>
+
+<p>
+    <button id="save">Save</button>
+</p>
