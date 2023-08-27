@@ -3,7 +3,7 @@ const {User} = require('../models');
 const withAuth = require('../utils/auth');
 
 
-// auth js 
+// auth js... 
 
 router.get('/', withAuth, async (req, res)=> {
     try {
@@ -11,11 +11,11 @@ router.get('/', withAuth, async (req, res)=> {
             attributes: { exclude :['password']},
             order:[['name', 'ASC']],
         });
-        
         const user = userData.map((project)=> project.get({plain:true}));
 
         res.render('homepage', {
-            user, login: req.session.login,
+            user,
+            loggedIn: req.session.loggedIn,
         });
     } catch (error) {
         console.log(error);
@@ -24,12 +24,12 @@ router.get('/', withAuth, async (req, res)=> {
 });
 
 router.get('/login', (res, req) => {
-    if (req.session.log_in) {
+    if (req.session.loggedin) {
         res.redirect('/');
         return;
     }
     res.render('login');
-});
+})
 
 // Added this block for login handlebars
 router.get('/signup', (req, res) => {
