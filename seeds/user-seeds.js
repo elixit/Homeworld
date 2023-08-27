@@ -4,22 +4,27 @@ const userData = [
     {
       username: 'iluvCats',
       password: 'abc123',
+      planet_id: 8
     },
     {
       username: 'JaneDoughy',
-      password: 'AstroFan23'
+      password: 'AstroFan23',
+      planet_id: 6
     },
     {
       username: 'SkyNet97',
-      password: 'mymomissarahconnor'
+      password: 'mymomissarahconnor',
+      planet_id: 3
     },
     {
       username: 'STCathy',
-      password: 'chickeninventor'
+      password: 'chickeninventor',
+      planet_id: 2
     },
     {
       username: 'BGates75',
-      password: 'billandmelissa4ever' 
+      password: 'billandmelissa4ever',
+      planet_id: 7 
     }
   ];
   

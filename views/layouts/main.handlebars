@@ -8,24 +8,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
-    <header id="navheader" class="text-white">
-        <section></section>
-        <!-- each homeworld image will need to be referred from the assets folder, each planet needs to be added to assets-->
+    <img class="bg" src="/public/images/background.jpg" />
+
+    <img id="logo" src="./public/images/titleWh.png">
+        
         {{#if loggedIn}}
-            <a href="/">Home</a>
-            <a href="/dashboard">Nav</a>
-            <a href="/api/users/logout">Logout</a>
+            <div id="menu">
+                <img id="logo" src="./public/images/titleWh.png">
+                <button id="community">Community</button>
+                <button id="explore">Explore</button>
+            </div>
         {{else}}
-            <a href="/">Home</a>
-            <a href="/dashboard">Nav</a>
-            <a href="/login">Login</a>
+            <div id="menu">
+                <img id="logo" src="./public/images/titleWh.png">
+                <a href="/login">Login</a>
         {{/if}}  
-    </header>
+    
     <main>
+
         {{{body}}}
+
     </main>
+
+    {{#if loggedIn}}
+        <script src="/public/javascript/logout.js"></script>
+    {{/if}}
+
 </body>
 </html>
