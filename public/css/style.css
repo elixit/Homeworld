@@ -1,5 +1,6 @@
 * {    
   color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 .bg {
@@ -28,6 +29,14 @@ hr, .vl {
   width: 25%;
   z-index: 3;
 }
+
+.card-text {
+  color: white;
+  font-size: 24px;
+  width: 600px;
+}
+
+/* Menus */
 
 #offlineMenu {
   display: inline-flex;
@@ -184,7 +193,7 @@ hr, .vl {
   opacity: 65%;
 }
 
-/* Active User Information */
+/* Home view > User information */
 
 #hud {
   display: flex;
@@ -272,7 +281,7 @@ input[type='file'] {
   top: 37%;
 }
 
-/* Decorative Status Bars  */
+/* Home and Community views > Decorative status bars  */
 
 /* Bar Graph Horizontal */
 .bar-graph .status {
@@ -410,22 +419,23 @@ input[type='file'] {
   z-index: 2;
 }
 
-#login {  
+#login {
   position: absolute;
   margin-top: 250px;
   margin-left: 515px;    
   z-index: 3;   
 }
 
+#login-card-title {
+  margin-top: -120px;
+  margin-left: 160px;
+  padding-bottom: 120px;
+  font-size: 48px;  
+}
+
 #login input {
   color: black;
   width: 300px;
-}
-
-#login .card-text {
-  color: white;
-  font-size: 24px;
-  width: 600px;
 }
 
 #loginForm button {
@@ -448,35 +458,9 @@ input[type='file'] {
   color: white;
 }
 
-#signupLink {
-  display: flex;
-  position: absolute;  
-  font-size: 28px;
-  color: white;    
-  margin-top: 60px;
-  margin-left: -160px;
-  --b: 0.1em;
-  --c: #eeff00;
-  text-decoration: none;  
-  color: white;
-  padding-block: var(--b);
-  background: 
-      linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
-      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
-  -webkit-background-clip: text,padding-box;
-        background-clip: text,padding-box;
-  transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
-  z-index: 3;
-}
-
-#signupLink:hover {
-  --_p: 100%;
-  --_s: .3s;
-}
-
 /* Signup page */
 
-#hudSignup {
+#hudRegister {
   display: flex;
   position: absolute;
   margin-top: 160px;
@@ -484,25 +468,26 @@ input[type='file'] {
   z-index: 2;
 }
 
-#signup {  
+#register {  
   position: absolute;
   margin-top: 250px;
   margin-left: 515px;    
   z-index: 3;    
 }
 
-#signup input {
+#register-card-title {
+  margin-top: -120px;
+  margin-left: 140px;
+  padding-bottom: 120px;
+  font-size: 48px;  
+}
+
+#register input {
   color: black;
   width: 300px;
 }
 
-.card-text {
-  color: white;
-  font-size: 24px;
-  width: 600px;
-}
-
-#signupForm button {
+#registerForm button {
   position: absolute;
   color: black;
   font-size: 18px;    
@@ -517,35 +502,9 @@ input[type='file'] {
   transition-duration: 0.4s;   
 }
 
-#signupForm button:hover {
+#registerForm button:hover {
   background-color: rgb(4, 0, 255);
   color: white;
-}
-
-#loginLink {
-  display: flex;
-  position: absolute;    
-  font-size: 28px;
-  color: white;    
-  margin-top: 60px;
-  margin-left: -160px;
-  --b: 0.1em;
-  --c: #eeff00;
-  text-decoration: none;  
-  color: white;
-  padding-block: var(--b);
-  background: 
-      linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
-      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
-  -webkit-background-clip: text,padding-box;
-        background-clip: text,padding-box;
-  transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
-  z-index: 3;
-}
-
-#loginLink:hover {
-  --_p: 100%;
-  --_s: .3s;
 }
 
 /* Planet page */
