@@ -23,7 +23,7 @@ router.get('/', withAuth, async (req, res)=> {
     }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', (res, req) => {
     if (req.session.log_in) {
         res.redirect('/');
         return;
