@@ -1,9 +1,10 @@
 const router  = require("express").Router();
-// Adding post and comment
-const {post, user, comment} = require('../models');
+const sequelize = require('../config/connection')
+const {User} = require('../models');
 const withAuth = require('../utils/auth');
 
-// auth js..
+
+// auth js 
 
 router.get('/', withAuth, async (req, res)=> {
     try {
@@ -14,8 +15,7 @@ router.get('/', withAuth, async (req, res)=> {
         const user = userData.map((project)=> project.get({plain:true}));
 
         res.render('homepage', {
-            user,
-            loggedIn: req.session.loggedIn,
+            user, log_in: req.session.log_in,
         });
     } catch (error) {
         console.log(error);
@@ -24,21 +24,12 @@ router.get('/', withAuth, async (req, res)=> {
 });
 
 router.get('/login', (res, req) => {
-    if (req.session.loggedin) {
+    if (req.session.log_in) {
         res.redirect('/');
         return;
     }
     res.render('login');
 })
 
-// Added this block for login handlebars
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('signup');
-  });
 
 module.exports = router;
