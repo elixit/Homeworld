@@ -23,12 +23,20 @@ router.get('/', withAuth, async (req, res)=> {
     }
 });
 
-router.get('/login', (res, req) => {
+router.get('/login', (req, res) => {
     if (req.session.log_in) {
         res.redirect('/');
         return;
     }
     res.render('login');
+})
+
+router.get('/signup', (req, res) => {
+    if (req.session.log_in) {
+        res.redirect('/');
+        return;
+    }
+    res.render('signup');
 })
 
 
