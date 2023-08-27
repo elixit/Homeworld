@@ -1,4 +1,5 @@
 const router  = require("express").Router();
+const sequelize = require('../config/connection')
 const {User} = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -11,7 +12,6 @@ router.get('/', withAuth, async (req, res)=> {
             attributes: { exclude :['password']},
             order:[['name', 'ASC']],
         });
-        
         const user = userData.map((project)=> project.get({plain:true}));
 
         res.render('homepage', {
@@ -29,16 +29,7 @@ router.get('/login', (res, req) => {
         return;
     }
     res.render('login');
-});
+})
 
-// Added this block for login handlebars
-router.get('/signup', (req, res) => {
-    if (req.session.loggedIn) {
-      res.redirect('/');
-      return;
-    }
-  
-    res.render('signup');
-  });
 
 module.exports = router;

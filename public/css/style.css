@@ -430,6 +430,7 @@ input {
   margin-top: 250px;
   margin-left: 515px;    
   z-index: 3;
+  color: black;
 }
 
 #signup input {
