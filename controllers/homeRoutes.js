@@ -3,7 +3,7 @@ const {User} = require('../models');
 const withAuth = require('../utils/auth');
 
 
-// auth js 
+// auth js. 
 
 router.get('/', withAuth, async (req, res)=> {
     try {
