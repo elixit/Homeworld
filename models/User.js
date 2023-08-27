@@ -31,7 +31,8 @@ User.init (
           }, 
           planet_id: {
             type: DataTypes.INTEGER,
-          }
+            allowNull: false,
+          },
           
 },
 {

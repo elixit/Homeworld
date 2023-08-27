@@ -95,7 +95,8 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try { 
-        const userData = await User.findOne();
+        const userData = await User.findOne({
+        });
 
         res.status(200).json(userData); 
 
