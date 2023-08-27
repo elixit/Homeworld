@@ -11,6 +11,7 @@ router.get('/', withAuth, async (req, res)=> {
             attributes: { exclude :['password']},
             order:[['name', 'ASC']],
         });
+        
         const user = userData.map((project)=> project.get({plain:true}));
 
         res.render('homepage', {
@@ -28,7 +29,7 @@ router.get('/login', (res, req) => {
         return;
     }
     res.render('login');
-})
+});
 
 // Added this block for login handlebars
 router.get('/signup', (req, res) => {
