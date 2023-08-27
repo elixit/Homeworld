@@ -124,7 +124,6 @@ hr, .vl {
   opacity: 65%;
 }
 
-
 /* Active User Information */
 
 #hud {
@@ -136,6 +135,14 @@ hr, .vl {
 }
 
 #hudRegister {
+display: flex;
+position: absolute;
+margin-top: 160px;
+margin-left: 20%;
+z-index: 2;
+}
+
+#hudSignup {
 display: flex;
 position: absolute;
 margin-top: 160px;
@@ -351,7 +358,7 @@ input[type='file'] {
 
 /* Login page */
 
-#loginForm {
+#login {
   position: absolute;
   margin-top: 250px;
   margin-left: 515px;    
@@ -368,17 +375,25 @@ input {
   width: 300px;
 }
 
-#login button {
+#loginForm button {
   position: absolute;
   color: black;
   font-size: 18px;    
   margin-top: -80px;
   margin-left: 450px;
   border-width: 0px;    
-  align-items: center;
+  align-items: center;    
+  border-style: ridge;
+  background-color: rgb(255, 255, 255);
+  transition-duration: 0.4s;   
 }
 
-#signup {
+#loginForm button:hover {
+  background-color: rgb(4, 0, 255);
+  color: white;
+}
+
+#signupLink {
   display: flex;
   position: absolute;    
   font-size: 28px;
@@ -399,7 +414,60 @@ input {
   z-index: 3;
 }
 
-#signup:hover {
+#signupLink:hover {
+  --_p: 100%;
+  --_s: .3s;
+}
+
+/* Signup page */
+
+#signup {
+  position: absolute;
+  margin-top: 250px;
+  margin-left: 515px;    
+  z-index: 3;
+}
+
+#signupForm button {
+  position: absolute;
+  color: black;
+  font-size: 18px;    
+  margin-top: -80px;
+  margin-left: 450px;
+  border-width: 0px;    
+  align-items: center;
+  border-style: ridge;
+  background-color: rgb(255, 255, 255);
+  transition-duration: 0.4s;   
+}
+
+#signupForm button:hover {
+  background-color: rgb(4, 0, 255);
+  color: white;
+}
+
+#loginLink {
+  display: flex;
+  position: absolute;    
+  font-size: 28px;
+  color: white;    
+  margin-top: 60px;
+  margin-left: -160px;
+  --b: 0.1em;   /* the thickness of the line */
+  --c: #eeff00; /* the color */
+  text-decoration: none;  
+  color: white;
+  padding-block: var(--b);
+  background: 
+      linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+  -webkit-background-clip: text,padding-box;
+        background-clip: text,padding-box;
+  transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  z-index: 3;
+}
+
+#loginLink:hover {
   --_p: 100%;
   --_s: .3s;
 }
