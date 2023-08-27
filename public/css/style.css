@@ -365,6 +365,10 @@ input[type='file'] {
   z-index: 3;   
 }
 
+#login input {
+  color: black;
+}
+
 .card-text {
   color: white;
   font-size: 24px;
@@ -427,6 +431,11 @@ input {
   margin-left: 515px;    
   z-index: 3;
 }
+
+#signup input {
+  color: black;
+}
+
 
 #signupForm button {
   position: absolute;
