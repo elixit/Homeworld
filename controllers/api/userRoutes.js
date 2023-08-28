@@ -1,6 +1,6 @@
 const router  = require("express").Router();
 const {User} = require('../../models');
-const { update } = require("../../models/User");
+
 
 // /api/users/ url to create user 
 
@@ -29,7 +29,8 @@ router.post('/', async (req, res)=> {
 
 router.post('/login', async (req, res)=> {
     try {        
-        const userData = await User.findOne({where: {username: req.body.username}});        
+        const userData = await User.findOne({where: {username: req.body.username}});   
+        console.log(userData);     
 
     if (!userData){
         res.status(400).json({message: 'Not Correct Username or Password'});
@@ -38,6 +39,8 @@ router.post('/login', async (req, res)=> {
 
     const validatePW = await userData.checkpassword(req.body.password);
 
+    console.log(validatePW);
+
     if (!validatePW) {
         res.status(400).json({message: 'Not Correct Username or Password'});
         return;
@@ -45,8 +48,9 @@ router.post('/login', async (req, res)=> {
     
     req.session.save(() => {
         req.session.userid = userData.id;
-        req.session.username = userData.username;
+        //req.session.username = userData.username;
         req.session.log_in = true;
+
         res.json({ user: userData, message: 'You are now logged in!' });
     })
         
