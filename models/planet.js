@@ -6,10 +6,9 @@ class Planet extends Model {}
 Planet.init(
     {
         id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
+            type: DataTypes.INTEGER,            
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
           },
           planet_name: {
             type: DataTypes.STRING

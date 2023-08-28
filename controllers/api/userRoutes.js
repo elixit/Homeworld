@@ -2,9 +2,9 @@ const router  = require("express").Router();
 const {User} = require('../../models');
 const { update } = require("../../models/User");
 
-// /api/users/ url to creat user 
+// /api/users/ url to create user 
 
-router.post('/', async(req, res)=> {
+router.post('/', async (req, res)=> {
     try {
         const userData = await User.create(req.body)
         // cookie sess 
@@ -25,11 +25,11 @@ router.post('/', async(req, res)=> {
     }
 });
 
-
 // login route 
 
-router.post('/login', async (req , res)=> {
-    try { const userData = await User.findOne({where: {username: req.body.username}});
+router.post('/login', async (req, res)=> {
+    try {        
+        const userData = await User.findOne({where: {username: req.body.username}});        
 
     if (!userData){
         res.status(400).json({message: 'Not Correct Username or Password'});
@@ -42,14 +42,12 @@ router.post('/login', async (req , res)=> {
         res.status(400).json({message: 'Not Correct Username or Password'});
         return;
     }
-
-    req.session.save(()=> {
+    
+    req.session.save(() => {
         req.session.userid = userData.id;
         req.session.username = userData.username;
         req.session.log_in = true;
-
-        res.status(200).json(userData);
-
+        res.json({ user: userData, message: 'You are now logged in!' });
     })
         
     } catch (error) {
@@ -95,7 +93,9 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try { 
-        const userData = await User.findOne();
+        const userData = await User.findOne({
+            where: { id: req.params.id }, 
+        });
 
         res.status(200).json(userData); 
 
