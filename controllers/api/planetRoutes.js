@@ -67,4 +67,21 @@ router.delete('/:id', (req, res) => {
     }).catch((err) => res.json(err));
 });
 
+// post planet 
+
+router.post('/', async (req , res) => {
+    try {
+        const planetData = await Planet.create({
+            // need to add planet comment field 
+        });
+
+        res.status(200).json(planetData);
+        
+    } catch (error) {
+        console.log(error);
+        res.status(500).json(error);
+        
+    }
+});
+
 module.exports = router;
