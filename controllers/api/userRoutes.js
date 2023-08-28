@@ -94,6 +94,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try { 
         const userData = await User.findOne({
+            where: { id: req.params.id }, 
         });
 
         res.status(200).json(userData); 
