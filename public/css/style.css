@@ -106,15 +106,16 @@ hr, .vl {
 
 /* Flashing buttons */
 
-#community {
+#community {  
   height: 100px;
   width: 150px;
-  margin-top: 100px;
+  margin-top: -200px;
+  /* margin-left: 500px; */ */
   background-color: #1c87c9;
   color: white;    
   border-radius: 80%;
   border: none;    
-  cursor: pointer;
+  cursor: pointer;  
   display: inline-block;
   font-family: sans-serif;
   font-size: 20px;
@@ -149,7 +150,7 @@ hr, .vl {
 #explore {
   height: 100px;
   width: 150px;
-  margin-top: 100px;
+  margin-top: -200px;
   background-color: #1c87c9;
   color: white;    
   border-radius: 80%;
@@ -190,6 +191,37 @@ hr, .vl {
   animation-play-state: paused;
 }
 
+#logoutBtn {
+  display: flex;
+  position: absolute;    
+  height: 60px;
+  width: 100px;
+  border-width: 0px;    
+  align-items: center;
+  font-size: 30px;    
+  margin-top: -180px;
+  margin-left: 81%;
+  --b: 0.1em;   /* the thickness of the line */
+  --c: #eeff00; /* the color */
+
+  color: white;
+  padding-block: var(--b);
+  background: 
+      linear-gradient(var(--c) 50%,#eeff00 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+  -webkit-background-clip: text,padding-box;
+        background-clip: text,padding-box;
+  transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  z-index: 3;
+}
+
+#logoutBtn:hover {
+--_p: 100%;
+--_s: .3s;
+}
+
+/* Dashboard page */
+
 #shipStatus {
   display: inline-flex;
   position: absolute;        
@@ -201,7 +233,7 @@ hr, .vl {
   opacity: 65%;
 }
 
-/* Home view > User information */
+/* Dashboard > User information */
 
 #hud {
   display: flex;
@@ -289,7 +321,7 @@ input[type='file'] {
   top: 37%;
 }
 
-/* Home and Community views > Decorative status bars  */
+/* Dashboard and Community views > Decorative status bars  */
 
 /* Bar Graph Horizontal */
 .bar-graph .status {
@@ -622,3 +654,22 @@ body { font-family: sans-serif; }
   font-size: 80px;
   color: white;
 }
+
+@media only screen and (min-width: 642px) {
+  #menu {
+
+  }
+  #community {
+    margin-top: -160px;    
+    margin-left: 200px;
+  }
+  #explore {    
+      margin-top: -160px;      
+  }
+  #logoutBtn {
+      margin-left: 1100px;
+  }
+}
+
+
+  
