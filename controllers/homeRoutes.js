@@ -9,7 +9,7 @@ router.get('/', withAuth, async (req, res)=> {
     try {
         const userData = await User.findAll({
             attributes: { exclude :['password']},
-            order:[['name', 'ASC']],
+            order:[['username', 'ASC']],
         });
         const user = userData.map((project)=> project.get({plain:true}));
 
@@ -38,12 +38,11 @@ router.get('/register', (req, res) => {
     res.render('register');
 })
 
-router.get('/dashboard', (req, res) => {
-    if (req.session.log_in) {
-        res.redirect('/');
-        return;
-    }
-    res.render('dashboard');
+router.get('/dashboard', withAuth, (req, res) => {
+    let model = { 
+        loggedIn: req.session.log_in }
+        // Add session from helper
+    res.render('dashboard', model);
 })
 
 
