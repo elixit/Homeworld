@@ -109,8 +109,7 @@ hr, .vl {
 #community {  
   height: 100px;
   width: 150px;
-  margin-top: -200px;
-  /* margin-left: 500px; */ */
+  margin-top: -200px;  
   background-color: #1c87c9;
   color: white;    
   border-radius: 80%;
@@ -199,8 +198,8 @@ hr, .vl {
   border-width: 0px;    
   align-items: center;
   font-size: 30px;    
-  margin-top: -180px;
-  margin-left: 81%;
+  margin-top: -200px;
+  margin-left: 90%;
   --b: 0.1em;   /* the thickness of the line */
   --c: #eeff00; /* the color */
 
@@ -212,7 +211,7 @@ hr, .vl {
   -webkit-background-clip: text,padding-box;
         background-clip: text,padding-box;
   transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
-  z-index: 3;
+  z-index: 5;
 }
 
 #logoutBtn:hover {
