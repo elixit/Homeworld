@@ -16,8 +16,9 @@ router.get('/', async (req, res) => {
         console.log(error);
     }
 });
-   
-
+ 
+// get one planet
+ 
 router.get('/:id', async (req,res) => {
     try {
     const onePlanet = await Planet.findOne({
