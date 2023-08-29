@@ -2,11 +2,11 @@
 async function registerFormHandler(event) {
     event.preventDefault();
   
-    const username = document.querySelector('#loginUsername').value.trim();    
-    const password = document.querySelector('#loginPassword').value.trim();    
+    const username = document.querySelector('#registerUsername').value.trim();    
+    const password = document.querySelector('#registerPassword').value.trim();    
      
     if (username && password) {
-      const response = await fetch('/api/users', {
+      const response = await fetch('/api/users/', {
         method: 'post',
         body: JSON.stringify({
           username,          
@@ -25,4 +25,4 @@ async function registerFormHandler(event) {
     }
 }
   
-document.querySelector('#registerForm').addEventListener('submit', registerFormHandler);
+document.querySelector('.signup').addEventListener('submit', registerFormHandler);
