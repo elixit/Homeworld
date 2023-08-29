@@ -1,5 +1,6 @@
 {
-  "name": "homeworld",
+
+  "name": "HomeWorld",
   "version": "1.0.0",
   "description": "* As someone learning about the planets in our solar system",
   "main": "server.js",
