@@ -195,14 +195,17 @@ hr, .vl {
 #logoutBtn {
   display: flex;
   position: absolute;    
-  height: 60px;
-  width: 100px;
-  justify-content: space-evenly;
+  height: auto;
+  width: -30px;
   border-width: 0px;    
   align-items: center;
   font-size: 30px;    
-  margin-top: -200px;
-  margin-left: 90%;
+  margin-top: 15%;
+  margin-left: 81%;
+  --b: 0.1em;   /* the thickness of the line */
+  --c: #eeff00; /* the color */
+
+  color: white;
   --b: 0.1em;   /* the thickness of the line */
   --c: #eeff00; /* the color */
 
@@ -658,7 +661,7 @@ body { font-family: sans-serif; }
 }
 
 
-@media only screen and (max-width: 1180px) {  
+@media only screen and (max-width: 3608px) {  
   #community {
     margin-top: -160px;    
     margin-left: 200px;
@@ -670,6 +673,22 @@ body { font-family: sans-serif; }
       margin-left: 1100px;
   }
 }
-
+@media only screen and (max-width: 3000px) {  
+  #community {
+    margin-top: -160px;    
+    margin-left: 200px;
+  }
+  #explore {    
+      margin-top: -160px;      
+  }
+  #logoutBtn {
+      margin-left: 1100px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
 
   
