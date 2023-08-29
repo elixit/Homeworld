@@ -40,7 +40,9 @@ router.get('/register', (req, res) => {
 
 router.get('/dashboard', withAuth, (req, res) => {
     let model = { 
-        loggedIn: req.session.log_in }
+        loggedIn: req.session.log_in
+        
+     }
         // Add session from helper
     res.render('dashboard', model);
 })
