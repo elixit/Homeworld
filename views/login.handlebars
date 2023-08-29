@@ -1,4 +1,29 @@
-<img id="hudLogin" src="/images/hud.png">
+<div id="formView">
+
+  <div class="formPad">
+	<form class="login">    
+		<h2 class="formlabel" id="login">&#128640;&nbsp;Log in</h2>
+			<div class="formPanel">
+				<input type="text" id="loginUsername" class="input" placeholder="Username" />			
+			<input type="password" id="loginPassword" class="input" placeholder="Password" />
+			</div>
+			<button type="submit" id="loginBtn" class="submit-btn">Log In</button>
+	</form>
+	<form class="signup slide-up">
+		<div class="center">
+            <h2 class="formlabel" id="signup">&#128203;&nbsp;Sign up</h2>
+		<div class="formPanel">
+			<input type="text" id="registerUsername" class="input" placeholder="Username" />			
+			<input type="password" id="registerPassword" class="input" placeholder="Password" />
+		</div>
+		<button type="submit" id="registerBtn" class="submit-btn">Register</button>			
+		</div>
+	</form>
+</div>
+
+
+
+{{!-- <img id="hudLogin" src="/images/hud.png">
 
     <div id="login">
     
@@ -17,6 +42,8 @@
               <button type="submit">Login</button><br>              
           </form>
 
-      </div>
+      </div> --}}
 
+      <script src="/javascript/formtab.js"></script>
       <script src="/javascript/login.js"></script>
+      <script src="/javascript/register.js"></script>
