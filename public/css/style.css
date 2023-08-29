@@ -718,12 +718,12 @@ input[type='file'] {
 			cursor: pointer;
 		}
 		
-		&.slide-up .formlabel span {
+		/* &.slide-up .formlabel span {
 			margin-right: 5px;
 			opacity: 1;
 			visibility: visible;
 			-webkit-transition: all .3s ease;
-		}
+		} */
 		
 		.formlabel {
 			color: #fff;
@@ -733,7 +733,7 @@ input[type='file'] {
 			span {
 				color: rgba(0,0,0,0.4);
 				opacity: 0;
-				visibility: hidden;
+				visibility: visible;
 				-webkit-transition: all .3s ease;
 			}
 		}
@@ -830,12 +830,12 @@ input[type='file'] {
 				font-size: 1.7em;
 				text-align: center;
 
-				span {
+				/* span {
 					color: rgba(0,0,0,0.4);
 					opacity: 0;
 			    visibility: hidden;
 				  -webkit-transition: all .3s ease;
-				}
+				} */
 			}
 
 			.formPanel {
@@ -919,12 +919,12 @@ input[type='file'] {
 			-webkit-transition: all .3s ease;
 		}
 		
-		&.slide-up .formlabel span {
+		/* &.slide-up .formlabel span {
 			margin-right: 5px;
 			opacity: 1;
 			visibility: visible;
 			-webkit-transition: all .3s ease;
-		}
+		} */
 	}
 }
   
