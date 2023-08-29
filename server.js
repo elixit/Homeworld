@@ -30,6 +30,7 @@ const sess = {
         secure:false,
         sameSite:'strict',
     },
+   
     store: new SequelizeStore({
         db:sequelize,
     }),
