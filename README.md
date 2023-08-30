@@ -50,5 +50,7 @@
 ### Credit
 
 [3D Solar System](https://codepen.io/juliangarnier/pen/krNqZO) by Julian Garnier
+
 [Menu with Awesome Hover](https://codepen.io/uiswarup/pen/dyyqaGR) by Swarup Kumar Kuila
+
 [Horizontal Bar Graph Animation](https://codepen.io/anythinggraphic/pen/LYPeaQV) by Kevin Donnigan
