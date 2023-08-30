@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res)=> {
         });
         const user = userData.map((project)=> project.get({plain:true}));
 
-        res.render('home', {
+        res.render('login', {
             user, log_in: req.session.log_in,
         });
     } catch (error) {
@@ -47,5 +47,8 @@ router.get('/dashboard', withAuth, (req, res) => {
     res.render('dashboard', model); 
 })
 
+router.get('/explore', (req, res) => {    
+    res.render('explore', { title: 'Sure', layout: 'explayout'});
+})
 
 module.exports = router;

@@ -46,3 +46,7 @@
 * Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
 
 * Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+
+### Credit
+
+[3D Solar System](https://codepen.io/juliangarnier/pen/krNqZO) by Julian Garnier 

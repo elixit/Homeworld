@@ -1,4 +1,4 @@
-async function logout() {
+async function logout() {    
     const response = await fetch('/api/users/logout', {
       method: 'post',
       headers: { 'content-type': 'application/json' }
@@ -8,7 +8,10 @@ async function logout() {
       document.location.replace('/');
     } else {
       alert(response.statusText);
-    }
+    }    
+    console.log('Meeeeeeee');
   }
   
+  
+
   document.querySelector('#logoutBtn').addEventListener('click', logout);
