@@ -120,4 +120,13 @@ router.get('/api/planets/:id', (req, res) => {
     });
 });
         
+router.get('/about', withAuth, (req, res) => {
+    let model = {
+        loggedIn: req.session.log_in,
+        layout: 'explayout'
+    }
+    res.render('about', model)
+    
+});
+
 module.exports = router;

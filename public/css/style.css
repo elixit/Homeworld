@@ -1141,3 +1141,18 @@ input[type='file'] {
     color: #fff; 
   }
   
+#about {
+  display: flex;
+}
+
+#backend {
+  display: inline;
+  position: relative;
+}
+
+#frontend {
+  display: inline;
+  position: relative;
+  width: 764px;
+  height: auto;
+}
