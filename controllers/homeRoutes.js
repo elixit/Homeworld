@@ -114,8 +114,9 @@ router.get('/planet/:id', (req, res) => {
             const Planet = postData.get({ plain: true });                        
 
             res.render('planet', {
-                Planet,
-                loggedIn: req.session.log_in
+                Planet,                
+                loggedIn: req.session.log_in,
+                layout: 'main'                
             });
             
         })    
