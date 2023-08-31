@@ -115,8 +115,8 @@ hr, .vl {
   position: absolute;
   height: 100px;
   width: 100px;
-  margin-top: 550px;
-  margin-left: 500px;
+  margin-top: 150px;
+  margin-left: 1500px;
   background-color: #1c87c9;
   color: white;    
   border-radius: 80%;
@@ -157,8 +157,8 @@ hr, .vl {
   position: absolute;
   height: 100px;
   width: 100px;
-  margin-top: 550px;
-  margin-left: 700px;
+  margin-top: 350px;
+  margin-left: 1500px;
   background-color: #fffda1;
   color: white;    
   border-radius: 80%;
@@ -201,8 +201,8 @@ hr, .vl {
   position: absolute;
   height: 100px;
   width: 100px;
-  margin-top: 550px;
-  margin-left: 900px;
+  margin-top: 10px;
+  margin-left: 300px;
   background-color: #c27f7f;
   color: white;    
   border-radius: 80%;
@@ -247,8 +247,8 @@ hr, .vl {
   position: absolute;
   height: 100px;
   width: 100px;
-  margin-top: 550px;
-  margin-left: 1100px;
+  margin-top: 10px;
+  margin-left: 100px;
   background-color: #1c87c9;
   color: white;    
   border-radius: 80%;
@@ -374,6 +374,7 @@ input[type='file'] {
         background-clip: text,padding-box;
   transition: .25s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
   z-index: 3;
+  visibility: hidden;
 }
 
 #save:hover {

@@ -1518,8 +1518,8 @@ hr, .vl {
 #viewBtn {
   display: flex;
   position: fixed;
-  height: auto;
-  width: 15%;
+  height: 35%;
+  width: auto;
   margin-top: 260px;
   margin-left: 80%;  
   border: none;
