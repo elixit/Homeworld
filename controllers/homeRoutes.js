@@ -20,6 +20,7 @@ router.get('/', withAuth, async (req, res)=> {
 
         res.render('login', {
             user, log_in: req.session.log_in,
+            layout: main
         });
     } catch (error) {
         console.log(error);
@@ -63,6 +64,7 @@ router.get('/explore', withAuth, (req, res) => {
         layout: 'explayout'
     }
     res.render('explore', model)
+    
 });
 
 router.get('/planet', withAuth, (req, res) => {    
