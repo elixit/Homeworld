@@ -5,12 +5,14 @@ const User = require('../models/User');
 
    const model = {};
 
-   model.log_in = log_in;
+   model.loggedIn = log_in;
    model.user_id = user_id;
-
+   
+   console.log(user_id)
    const userData = await User.findByPk( user_id)
    console.log(userData);
-   model.user = userData.get({plain: true})
+
+   model.user = userData.get({plain: true});
    console.log(model);
    return model;
 };

@@ -43,8 +43,8 @@ router.get('/register', (req, res) => {
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
         console.log('hi');
-        const model =  buildData(req.session.log_in, req.session.userid);
-       
+        let model =  buildData( req.session.log_in, req.session.userid );
+        
        console.log(model); 
         res.render('dashboard', model); 
 
