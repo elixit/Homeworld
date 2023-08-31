@@ -11,8 +11,18 @@ view.setAttribute('href', '/planet/' + val)
 
 }
 
-// const image = document.getElementById('#imgPlanet');
+
 
 // if (Planet.planet_name === 'Mercury') {
 //     image="images/Mercury.png";
 // }
+
+
+
+
+
+
+
+
+
+

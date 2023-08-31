@@ -581,6 +581,11 @@ input[type='file'] {
 
 /* Planet page */
 
+#imgPlanet {
+  height: 800px;
+  width: auto;
+}
+
 #planetRow {
   display: flex;
   position: absolute;
@@ -592,7 +597,7 @@ input[type='file'] {
 
 #planetName {
   font-size: 48px;
-  margin-left: 630px;
+  margin-left: 670px;
 }
 
 #planet {

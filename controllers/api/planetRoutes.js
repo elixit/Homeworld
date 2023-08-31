@@ -30,7 +30,8 @@ router.get('/:id', (req,res) => {
       'planet_size',
       'planet_distance',
       'planet_temperature',
-      'number_moons'
+      'number_moons',
+      'planet_photo'
     ],
     // include: [
     //   // include the Comment model here:

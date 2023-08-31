@@ -26,6 +26,9 @@ Planet.init(
           number_moons: {
             type:DataTypes.STRING
           },
+          planet_photo: {
+            type:DataTypes.STRING
+          },
 
     },
     {
