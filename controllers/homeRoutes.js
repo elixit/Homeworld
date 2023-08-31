@@ -1,7 +1,6 @@
 const router  = require('express').Router();
-const {User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
-const Planet = require('../models')
+const { Planet, User, Comment } = require('../models')
 
 const buildData = require('../utils/buildHelper');
 
@@ -81,8 +80,7 @@ router.get('/explore', withAuth, (req, res) => {
 // and underneath that, a render of the single-post handlebar (ours is planet).
 // I wasn't able to get it to render, but I feel like this is the right track.
 
-router.get('/planet/:id', (req, res) => {    
-    res.render('planet', {Planet});
+router.get('/planet/:id', (req, res) => {        
     Planet.findOne({
         where: {
             id: req.params.id
@@ -107,13 +105,18 @@ router.get('/planet/:id', (req, res) => {
           ]
         })  
         
-        .then(planetData => {
-            if (!planetData) {
+        .then(postData => {
+            if (!postData) {
             res.status(404).json({ message: 'No post found with this id' });
             return;
             }
 
-            const Planet = planetData.get({ plain: true });                        
+            const Planet = postData.get({ plain: true });                        
+
+            res.render('planet', {
+                Planet,
+                loggedIn: req.session.log_in
+            });
             
         })    
     .catch(err => {

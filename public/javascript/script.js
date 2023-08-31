@@ -7,7 +7,7 @@ document.getElementById("viewBtn").style.visibility = 'visible';
 console.log('This guy', val);
 
 let view = document.querySelector('#viewBtn');
-view.setAttribute('href', '/api/planets/' + val)
+view.setAttribute('href', '/planet/' + val)
 
 }
 

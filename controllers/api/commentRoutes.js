@@ -1,10 +1,10 @@
 const router  = require("express").Router();
 const {Comment } = require('../../models');
-
+const withAuth = require('../../utils/auth');
 
 // create post 
 
-router.post ('/', async (req , res) => {
+router.post ('/', withAuth, async (req , res) => {
     try {
         const newComment = await Comment.create({
             ...req.body,
@@ -38,26 +38,26 @@ router.delete('/:id', async (req, res)=> {
 
 // get one commment by its id 
 
-router.get('/:id', async( req, res)=> {
-    try {
-        const commentData = await Comment.findOne({
-            where:{
-                id: req.params.id
-            }
-        });
+// router.get('/:id', async( req, res)=> {
+//     try {
+//         const commentData = await Comment.findOne({
+//             where:{
+//                 id: req.params.id
+//             }
+//         });
 
-        if (!commentData){
-            res.status(400).json({
-                message: 'No Comment Found',
-            });
-        }
-        res.status(200).json(commentData);
-    } catch (error) {
-        req.status(500).json(error);
-        console.log(error);
+//         if (!commentData){
+//             res.status(400).json({
+//                 message: 'No Comment Found',
+//             });
+//         }
+//         res.status(200).json(commentData);
+//     } catch (error) {
+//         req.status(500).json(error);
+//         console.log(error);
         
-    }
-});
+//     }
+// });
 
 // get all comments 
 

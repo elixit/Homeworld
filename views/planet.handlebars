@@ -1,7 +1,9 @@
     <div id="planetRow">
         <img id="planet" src="/images/mars.png" />
-    </div>
+    </div>    
     
+    <div id="planetName">Planet {{Planet.planet_name}}</div>
+
     <img id="hudPlanet" src="/images/hud.png">
 
     <img id="hudPlanetSideA" src="/images/hud2.png">
@@ -11,12 +13,33 @@
 <div id="planetFacts">
     <section id="factsTitle"><h1>Facts</h1></section>
 
+        Planet Size: {{Planet.planet_size}}
+        <p>
+        Distance from Sun: {{Planet.planet_distance}}
+        </p>
+        Planet Temperature: {{Planet.planet_temperature}}
+        <p>
+        Number of Moons: {{Planet.number_moons}}
+        </p>
+
 </div>
 
 <div id="planetComments">
     <section id="commTitle"><h1>Comments</h1></section>
 
-    <button id="test">Test</button>
+  <form class="post-form">  
+    <div>
+      <p>
+      <label for="post-content"></label>
+      </p>
+      <input id="post-content" name="post-content" placeholder="Message"/>
+      <p>
+    </div>
+    <button type="submit">Submit</button>
+    </p>
+  </form>
+
+    
 
 </div>
 
