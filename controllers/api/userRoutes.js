@@ -95,24 +95,28 @@ router.get('/', async (req, res) => {
 
 // get one user 
 
-router.get('/:id', async (req, res) => {
-    try { 
-        const userData = await User.findOne({
-            where: { id: req.params.id }, 
-        });
-
-        res.status(200).json(userData); 
-
-        if (!userData) {
-            res.status(400).json({ message: 'No User Found'});
+router.get('/:id', (req, res)=>{
+    User.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes:[
+            'id',
+            'username',
+            'planet_id'
+        ]
+    })
+    .then(userData =>{
+        if(!userData) {
+            res.status(400).json({message: 'No User'});
             return;
         }
         
-    } catch (error) {
-        console.log(error); 
-        res.status(500).json(error); 
-        
-    }
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 // update user info 
