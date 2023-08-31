@@ -1,13 +1,9 @@
 const router  = require('express').Router();
-const {User} = require('../models');
+const {User, Comment} = require('../models');
 const withAuth = require('../utils/auth');
-const planets = require('../models')
-
+const Planet = require('../models')
 
 const buildData = require('../utils/buildHelper');
-
-
-
 
 // auth js 
 
@@ -85,8 +81,9 @@ router.get('/explore', withAuth, (req, res) => {
 // and underneath that, a render of the single-post handlebar (ours is planet).
 // I wasn't able to get it to render, but I feel like this is the right track.
 
-router.get('/api/planets/:id', (req, res) => {
-    planet.findOne({
+router.get('/planet/:id', (req, res) => {    
+    res.render('planet', {Planet});
+    Planet.findOne({
         where: {
             id: req.params.id
         },
@@ -97,27 +94,33 @@ router.get('/api/planets/:id', (req, res) => {
             'planet_distance',
             'planet_temperature',
             'number_moons'
-        ]    
-        })     
-
+        ],
+        include: [
+            {
+              model: Comment,
+              attributes: ['id', 'comment_text', 'user_id', 'planet_id'],              
+            },
+            {
+              model: User,
+              attributes: ['username', 'planet_id']
+            }
+          ]
+        })  
+        
         .then(planetData => {
             if (!planetData) {
             res.status(404).json({ message: 'No post found with this id' });
             return;
             }
 
-        const planet = planetData.get({ plain: true});
-
-        res.render('planet', {                        
-            planet,
-            loggedIn: req.session.loggedIn,
-            layout: 'explayout',
-        });
-    })
+            const Planet = planetData.get({ plain: true });                        
+            
+        })    
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
     });
+    console.log('after')
 });
         
 router.get('/about', withAuth, (req, res) => {
