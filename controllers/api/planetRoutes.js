@@ -19,24 +19,69 @@ router.get('/', async (req, res) => {
  
 // get one planet
  
-router.get('/:id', async (req,res) => {
-    try {
-    const onePlanet = await Planet.findOne({
-        where: {
-            id: req.params.id
-        }
-    })
-    if (!onePlanet){
-        return res.status(400).json({
-          message: "Cannot find planet."
-        })
+router.get('/:id', (req,res) => {
+  Planet.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'planet_name',
+      'planet_size',
+      'planet_distance',
+      'planet_temperature',
+      'number_moons'
+    ],
+    // include: [
+    //   // include the Comment model here:
+    //   {
+    //     model: user,
+    //     attributes: ['username', 'twitter', 'github']
+    //   },
+    //   {
+    //     model: comment,
+    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+    //     include: {
+    //       model: user,
+    //       attributes: ['username', 'twitter', 'github']
+    //     }
+    //   }
+    // ]
+  })    
+    .then(planetData => {
+      if (!planetData) {
+        res.status(404).json({ message: 'No post matches this id' });
+        console.log('after')
+        return;
       }
-      return res.status(200).json(onePlanet)
-    }catch (error) {
-        req.status(500).json(error);
-        console.log(error);
-    }
-});
+      res.json(planetData);
+
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+    
+  });
+
+
+    // try {
+    // const onePlanet = await Planet.findOne({
+    //     where: {
+    //         id: req.params.id
+    //     }
+    // })
+    // if (!onePlanet){
+    //     return res.status(400).json({
+    //       message: "Cannot find planet."
+    //     })
+    //   }
+    //   return res.status(200).json(onePlanet)
+    // }catch (error) {
+    //     req.status(500).json(error);
+    //     console.log(error);
+    // }
+
 //switch planet route
 router.put('/:id', (req, res) => {
     // update a category by its `id` value
