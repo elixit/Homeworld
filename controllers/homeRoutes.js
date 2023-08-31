@@ -1,6 +1,7 @@
 const router  = require('express').Router();
 const {User} = require('../models');
 const withAuth = require('../utils/auth');
+const buildData = require('../utils/buildHelper');
 
 
 
@@ -39,13 +40,19 @@ router.get('/register', (req, res) => {
     res.render('register');
 })
 
-router.get('/dashboard', withAuth, (req, res) => {
-    let model = {
-        loggedIn: req.session.log_in } // detele all once helper is done 
+router.get('/dashboard', withAuth, async (req, res) => {
+    try {
+        console.log('hi');
+        const model =  buildData(req.session.log_in, req.session.userid);
+       
+       console.log(model); 
+        res.render('dashboard', model); 
 
-        // Add session from helper
-    res.render('dashboard', model); 
-})
+
+} catch (err) {
+res.status(500).json(err);
+
+}});
 
 router.get('/explore', withAuth, (req, res) => {
     let model = {
@@ -53,7 +60,7 @@ router.get('/explore', withAuth, (req, res) => {
         layout: 'explayout'
     }
     res.render('explore', model)
-})
+});
 
 
 

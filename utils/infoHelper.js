@@ -20,6 +20,5 @@ router.get('/:id', async (req ,res)=> {
      
 });
 
-const planetData = planetInfo.get({ plain: true});
 
 module.exports = planetData;

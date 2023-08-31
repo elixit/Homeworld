@@ -1,16 +1,18 @@
+
 const User = require('../models/User');
 
-const buildData = async (userid) => {
+ async function buildData (log_in, user_id){
 
-   try {
-    const userData = await User.findByPk(userid);
-    return userData; 
+   const model = {};
 
- 
-   } catch (error) {
-    console.log(error);
-    
-   }
+   model.log_in = log_in;
+   model.user_id = user_id;
+
+   const userData = await User.findByPk( user_id)
+   console.log(userData);
+   model.user = userData.get({plain: true})
+   console.log(model);
+   return model;
 };
 
 module.exports = buildData;
