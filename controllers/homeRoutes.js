@@ -91,7 +91,8 @@ router.get('/planet/:id', (req, res) => {
             'planet_size',
             'planet_distance',
             'planet_temperature',
-            'number_moons'
+            'number_moons',
+            'planet_photo'
         ],
         include: [
             {
