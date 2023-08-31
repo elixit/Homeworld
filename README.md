@@ -54,3 +54,7 @@
 [Menu with Awesome Hover](https://codepen.io/uiswarup/pen/dyyqaGR) by Swarup Kumar Kuila
 
 [Horizontal Bar Graph Animation](https://codepen.io/anythinggraphic/pen/LYPeaQV) by Kevin Donnigan
+
+[Planet View button](https://www.freepik.com/free-vector/futuristic-hud-interface-with-gradient-style_2966615.htm) by Freepik
+
+[Login/Signup Form Animation](https://codepen.io/shayanea/pen/eVMMgO) by Shayan

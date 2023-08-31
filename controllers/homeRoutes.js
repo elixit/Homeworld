@@ -1,8 +1,6 @@
 const router  = require('express').Router();
 const {User} = require('../models');
 const withAuth = require('../utils/auth');
-const auth2 = require ('../utils/auth2');
-
 
 // auth js 
 
@@ -55,12 +53,12 @@ router.get('/explore', withAuth, (req, res) => {
     res.render('explore', model)
 })
 
-
-
-
-
 router.get('/planet', withAuth, (req, res) => {    
-    res.render('planet', {layout: 'explayout'})
+    let model = {
+        loggedIn: req.session.log_in,
+        layout: 'explayout'
+    }
+    res.render('planet', model)
 })
 
 module.exports = router;
