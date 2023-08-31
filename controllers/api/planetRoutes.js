@@ -33,22 +33,8 @@ router.get('/:id', (req,res) => {
       'number_moons',
       'planet_photo'
     ],
-    // include: [
-    //   // include the Comment model here:
-    //   {
-    //     model: user,
-    //     attributes: ['username', 'twitter', 'github']
-    //   },
-    //   {
-    //     model: comment,
-    //     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-    //     include: {
-    //       model: user,
-    //       attributes: ['username', 'twitter', 'github']
-    //     }
-    //   }
-    // ]
-  })    
+   
+  })  
     .then(planetData => {
       if (!planetData) {
         res.status(404).json({ message: 'No post matches this id' });
@@ -66,22 +52,6 @@ router.get('/:id', (req,res) => {
   });
 
 
-    // try {
-    // const onePlanet = await Planet.findOne({
-    //     where: {
-    //         id: req.params.id
-    //     }
-    // })
-    // if (!onePlanet){
-    //     return res.status(400).json({
-    //       message: "Cannot find planet."
-    //     })
-    //   }
-    //   return res.status(200).json(onePlanet)
-    // }catch (error) {
-    //     req.status(500).json(error);
-    //     console.log(error);
-    // }
 
 //switch planet route
 router.put('/:id', (req, res) => {
