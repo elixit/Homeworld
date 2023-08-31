@@ -1513,6 +1513,23 @@ hr, .vl {
   width: 600px;
 }
 
+/* View button */
+
+#viewBtn {
+  display: flex;
+  position: fixed;
+  height: auto;
+  width: 15%;
+  margin-top: 260px;
+  margin-left: 80%;  
+  border: none;
+  outline: none;    
+  cursor: pointer;  
+  z-index: 1;
+  visibility: hidden;
+}
+
+
 /* Menus */
 
 #menu {
