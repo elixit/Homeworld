@@ -4,7 +4,7 @@ async function PostFormHandler(event) {
 
     // const id = document.querySelector('input[name="id"]').value;    
     const planet_id = document.querySelector('input[name="planetid"]').value;
-    const postContent = document.querySelector('input[name="post-content"]').value;
+    const postContent = document.querySelector('textarea[name="post-content"]').value;
     
 
   
