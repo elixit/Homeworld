@@ -650,22 +650,23 @@ input[type='file'] {
 
 #messageInput {
   position: absolute;  
-  margin-top: 800px;  
+  margin-top: 500px;  
 }
 
 #postContent {
-  height: 50px;
-  width: 300px;
+  height: 80px;
+  width: 350px;
   color: black;
   z-index: -5;
-  opacity: 75%;
+  opacity: 70%;
+  resize: none;
 }
 
 #commentSubmit {
   color: black;
   height: 30px;
   width: 80px;
-  opacity: 75%;
+  opacity: 70%;
 }
 
 /* Media queries */
