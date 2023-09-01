@@ -522,7 +522,7 @@ input[type='file'] {
 #loginForm button:hover {
   background-color: rgb(4, 0, 255);
   color: white;
-} */
+} */ */
 
 /* Signup page */
 
@@ -576,34 +576,11 @@ input[type='file'] {
 #registerForm button:hover {
   background-color: rgb(4, 0, 255);
   color: white;
-} */
+}
 
 /* Planet page */
 
-#imgPlanet {
-  height: 800px;
-  width: auto;
-}
 
-#planetRow {
-  display: flex;
-  position: absolute;
-  margin-top: -30px;
-  width: 100%;
-  justify-content: center;
-  z-index: -1;    
-}
-
-#planetName {
-  font-size: 48px;
-  margin-left: 650px;
-}
-
-#planet {
-  position: absolute;
-  margin-top: -50px;  
-  height: 500px;
-}
 
 #hudPlanet {
   display: flex;
@@ -616,16 +593,16 @@ input[type='file'] {
 #hudPlanetSideA {
   display: flex;
   position: absolute;
-  margin-top: 0px;
-  margin-left: 30px;
+  margin-top: 30px;
+  margin-left: 10%;
   z-index: 2;
 }
 
 #hudPlanetSideB {
   display: flex;
   position: absolute;
-  margin-top: 0px;
-  margin-left: 79%;
+  margin-top: 30px;
+  margin-left: 75%;
   z-index: 2;
 }
 
@@ -633,27 +610,53 @@ input[type='file'] {
   position: absolute;
   height: 350px;
   width: 200px;    
-  margin-top: 0px;
-  margin-left: 80px;
+  margin-top: 30px;
+  margin-left: 13%;
   text-align: center;
 }  
+
+/* Change later to Planet Residents */
 
 #planetComments {
   position: absolute;
   height: 350px;
-  width: 725px;    
-  margin-top: 200px;
-  margin-left: 425px;
+  width: 200px;    
+  margin-top: -25px;
+  margin-left: 78%;
+  text-align: center;    
+  z-index: 105;
+}
+
+#centerHud {
+  display: flex;  
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   text-align: center;
 }
 
-#planetResidents {
+#planetName {
+  font-size: 48px;
+  z-index: 50;
+}
+
+#planet {
   position: absolute;
-  height: 350px;
-  width: 200px;    
-  margin-top: 0px;
-  margin-left: 1300px;
-  text-align: center;
+  margin-top: 200px;  
+  height: 500px;
+}
+
+#messageInput {
+  position: absolute;  
+  margin-top: 800px;  
+}
+
+#postContent {
+  height: 50px;
+  width: 300px;
+  color: black;
+  z-index: -5;
 }
 
 /* Media queries */
@@ -1104,22 +1107,6 @@ input[type='file'] {
     color: #fff; 
   }
 
-/* Comments area */
-
-.post-form {
-  position: absolute;
-  margin-top: 30px;
-  margin-left: 65px;  
-  z-index: 100;
-}
-
-#postContent {
-  height: 50px;
-  width: 600px;
-  color: black;
-  z-index: -5;
-}
-
 #nameUser {
   position: absolute;
   font-size: 28px;
@@ -1145,7 +1132,6 @@ input[type='file'] {
   font-family: 'Poor Story', cursive;  
   box-sizing: border-box;
 }
-
 
 .wrapper {
   width: 100%;
