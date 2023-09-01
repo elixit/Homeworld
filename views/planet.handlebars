@@ -21,8 +21,8 @@
         <p>
         Number of Moons: {{Planet.number_moons}}
         </p>
-      
-
+        {{Comment.comment_text}}
+        
 </div>
 
 <div id="planetComments">
@@ -33,10 +33,10 @@
       <p>
       <label for="postContent"></label>
       </p>
-      <input type="hidden" name="id" id="id" value="{{Planet.id}}"/>
-      <input type="hidden" name="userid" id="userid" value="{{User.id}}"/>      
-      <input type="hidden" name="planetid" id="planetid" value="{{Planet.Planet_id}}"/>      
-      <input id="postContent" name="post-content" placeholder="Message"/>
+      {{!-- <input type="hidden" name="id" id="id" value="{{Planet.id}}"/> --}}
+      <input type="hidden" name="planetid" id="planetid" value="{{Planet.id}}"/>      
+      <input id="postContent" name="post-content" placeholder="Message"/>      
+
       <p>
     </div>
     <button id="commentSubmit" type="submit">Submit</button>
@@ -50,22 +50,26 @@
 
 <div id="planetResidents">
 
-
 <section id="resTitle"><h1>Comments</h1></section>
 
-{{#if comment.length}}
+  <div>
+    <div>
+      {{#each comments as |comment|}}
+      {{comment_text}}
+    </div>
+      <div>
+        <b>{{User.username}}</b>
+      </div>
+  </div>
 
-{{#each comments as |comment|}}
-{{comment}}
-  {{/each}}
-
-  {{else}}
-<h6>There aren't any posts</h6>
-
-
+</div>
 
   
-  {{/if}}
+  {{else}}
+  
+<h6>There aren't any posts</h6>
+
+{{/each}} 
 
 </div>
 

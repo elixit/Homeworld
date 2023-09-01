@@ -96,7 +96,7 @@ router.get('/planet/:id', (req, res) => {
         ],
         include: [
             {
-              model: Comment,
+              model: Comment,              
               attributes: ['id', 'comment_text', 'user_id', 'planet_id'],              
             },
             {

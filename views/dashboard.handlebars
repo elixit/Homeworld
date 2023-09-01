@@ -20,26 +20,25 @@
           </section>
     </div>
 
-    {{!-- <img id="hud" src="/images/hud.png"> --}}
+    <img id="hud" src="/images/hud.png">
 
-{{!-- <div id="activeUserInfo">
+    <div id="activeUserInfo">
 
-    <!-- User Information -->
-    <div class="userPicture">
-
-    
-    
-        {{user.username}}
-        <p>            
+    <div id="nameUser">Welcome, {{user.username}}!</div>
+      <p>
+        <div id="locationStatus">You are currently in the Solar System.</div>
+        {{!-- <p>            
         <img src="/images/unknownPhoto.jpg">
         </p>       
         <div id="browse">
             <input type="file">
-        </div>
+        </div> --}}
+
+        <img id="solar" src="./images/solarsystem.jpg"/>
 
     </div>    
 
-    <div class="planetPicture">
+    {{!-- <div class="planetPicture">
 
         {{user.homeplanet}}
         <p>
@@ -59,10 +58,10 @@
             </select>            
         <p>     
 
-    </div>
+    </div> --}}
 
 </div>
 
 <p>
     <button id="save">Save</button>
-</p> --}}
+</p>
