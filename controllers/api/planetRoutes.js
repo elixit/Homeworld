@@ -51,8 +51,6 @@ router.get('/:id', (req,res) => {
     
   });
 
-
-
 //switch planet route
 router.put('/:id', (req, res) => {
     // update a category by its `id` value

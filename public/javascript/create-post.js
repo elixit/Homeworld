@@ -1,12 +1,19 @@
 async function PostFormHandler(event) {
     event.preventDefault();
   
+
+    const id = document.querySelector('input[name="id"]').value;
+    const userid = document.querySelector('input[name="userid"]').value;
+    const planetid = document.querySelector('input[name="planetid"]').value;
     const postContent = document.querySelector('input[name="post-content"]').value;
+
   
-    const response = await fetch(`/api/planets`, {
+    const response = await fetch(`/api/comments`, {
       method: 'POST',
-      body: JSON.stringify({
-       
+      body: JSON.stringify({       
+        id,
+        userid,
+        planetid,
         postContent
       }),
       headers: {
@@ -15,10 +22,12 @@ async function PostFormHandler(event) {
     });
   
     if (response.ok) {
-      document.location.replace('/planet');
+      return
     } else {
      console.log('issue on create-post js');
     }
   }
   
-  document.querySelector('.newPost-form').addEventListener('submit', PostFormHandler);
+
+  
+  document.querySelector('.post-form').addEventListener('submit', PostFormHandler);
