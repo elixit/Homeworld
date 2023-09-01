@@ -6,9 +6,11 @@ const withAuth = require('../../utils/auth');
 
 router.post ('/', withAuth, (req , res) => {
     Comment.create({
+        // id: req.body.id,      
+        planet_id: req.body.planet_id,        
         comment_text: req.body.postContent,
-        user_id: req.session.user_id,
-        planet_id: req.body.planet_id
+        user_id: req.session.userid
+        
       })
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {

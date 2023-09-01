@@ -100,11 +100,12 @@ router.get('/:id', (req, res)=>{
         where: {
             id: req.params.id
         },
-        attributes:[
-            'id',
-            'username',
-            'planet_id'
-        ]
+        include: [
+            {
+                model: Comment,
+                attributes: ['id', 'username', 'comment_text']
+            },
+        ]        
     })
     .then(userData =>{
         if(!userData) {
