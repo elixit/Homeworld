@@ -644,7 +644,8 @@ input[type='file'] {
 #planet {
   position: absolute;
   margin-top: 200px;  
-  height: 500px;
+  height: 50%;
+  z-index: -20;
 }
 
 #messageInput {
@@ -657,6 +658,14 @@ input[type='file'] {
   width: 300px;
   color: black;
   z-index: -5;
+  opacity: 75%;
+}
+
+#commentSubmit {
+  color: black;
+  height: 30px;
+  width: 80px;
+  opacity: 75%;
 }
 
 /* Media queries */
@@ -705,6 +714,8 @@ input[type='file'] {
 	width: 350px;
 	position: relative;
 	overflow: hidden;
+  margin-top: -500px;
+  margin-left: 70%;
 	
 	&::after {
 		content: '';
