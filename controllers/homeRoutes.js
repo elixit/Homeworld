@@ -101,7 +101,7 @@ router.get('/planet/:id', (req, res) => {
             },
             {
               model: User,
-              attributes: ['username', 'planet_id']
+              attributes: ['id', 'username', 'planet_id']
             }
           ]
         })  

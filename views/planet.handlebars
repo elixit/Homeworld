@@ -4,9 +4,7 @@
         
     </div>    
     
-    <div id="planetName">Planet {{Planet.planet_name}}</div>
-
-    
+    <div id="planetName">Planet {{Planet.planet_name}}</div> 
 
     <img id="hudPlanetSideA" src="/images/hud2.png">
 
@@ -35,6 +33,9 @@
       <p>
       <label for="postContent"></label>
       </p>
+      <input type="hidden" name="id" id="id" value="{{Planet.id}}"/>
+      <input type="hidden" name="userid" id="userid" value="{{User.id}}"/>      
+      <input type="hidden" name="planetid" id="planetid" value="{{Planet.Planet_id}}"/>      
       <input id="postContent" name="post-content" placeholder="Message"/>
       <p>
     </div>
@@ -50,5 +51,24 @@
 <div id="planetResidents">
 
 
-    <section id="resTitle"><h1>Residents</h1></section>
+<section id="resTitle"><h1>Comments</h1></section>
+
+{{#if comment.length}}
+
+{{#each comments as |comment|}}
+{{comment}}
+  {{/each}}
+
+  {{else}}
+<h6>There aren't any posts</h6>
+
+
+
+  
+  {{/if}}
+
 </div>
+
+            
+
+<script src="/javascript/create-post.js"></script>

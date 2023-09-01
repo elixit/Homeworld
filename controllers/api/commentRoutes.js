@@ -1,23 +1,21 @@
 const router  = require("express").Router();
-const {Comment } = require('../../models');
+const {User, Planet, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // create post 
 
-router.post ('/', withAuth, async (req , res) => {
-    try {
-        const newComment = await Comment.create({
-            ...req.body,
-            user_id: req.session.user_id,
+router.post ('/', withAuth, (req , res) => {
+    Comment.create({
+        comment_text: req.body.postContent,
+        user_id: req.session.user_id,
+        planet_id: req.body.planet_id
+      })
+        .then(dbCommentData => res.json(dbCommentData))
+        .catch(err => {
+          console.log(err);
+          res.status(400).json(err);
         });
-
-        res.status(200).json(newComment);
-        
-    } catch (error) {
-        res.status(400).json(error);
-        
-    }
-});
+    })
 
 router.delete('/:id', async (req, res)=> {
     try {
