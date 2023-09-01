@@ -39,17 +39,22 @@ router.delete('/:id', async (req, res)=> {
 // get one commment by its id 
 
 router.get('/:id', (req, res) => {
-    Comment.findOne({
+    Comment.findAll({
         where: {
-            id: req.params.id
+            planet_id: req.params.id
         },
         attributes: [
             'id',
             'comment_text',
             'user_id',
             'planet_id'
-
-        ],
+        ],        
+        include: [
+            {
+                model: User,
+                attributes: ['id', 'planet_id', 'username']
+            }
+        ]
     })
     .then(commentData => {
         if(!commentData){
