@@ -54,11 +54,14 @@
 
   <div>
     <div>
-      {{#each comments as |comment|}}
-      {{comment_text}}
+      
+      {{#if comments.length}}
+      {{#each comments as |Comment|}}
+      {{Comment.comment_text}}
+      
     </div>
       <div>
-        <b>{{User.username}}</b>
+        <b>{{username}}</b>
       </div>
   </div>
 
@@ -70,6 +73,8 @@
 <h6>There aren't any posts</h6>
 
 {{/each}} 
+{{/if}}
+  
 
 </div>
 
