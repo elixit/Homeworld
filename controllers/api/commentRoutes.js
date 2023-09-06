@@ -38,10 +38,10 @@ router.delete('/:id', async (req, res)=> {
 
 // get one commment by its id 
 
-router.get('/:id', (req, res) => {
-    Comment.findAll({
+router.get('/planet/:id', (req, res) => {
+    Comment.findOne ({
         where: {
-            planet_id: req.params.id
+            id: req.params.id
         },
         attributes: [
             'id',
@@ -52,7 +52,15 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: User,
-                attributes: ['id', 'planet_id', 'username']
+                attributes: ['id', 'username']
+            },
+            {
+                model: Comment,
+                attributes: ['id','comment_text', 'user_id', 'planet_id'],
+                include: {
+                    model: User,
+                    attributes: ['id', 'username']
+                }
             }
         ]
     })

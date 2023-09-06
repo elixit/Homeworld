@@ -27,7 +27,7 @@ Comment.init (
             type: DataTypes.INTEGER,
             references: {
               model: 'Planet', 
-              key: 'id'
+              key: 'pid'
             },
         
           }
@@ -42,8 +42,3 @@ Comment.init (
 );
 
 module.exports = Comment;
-
-
-
-
-
