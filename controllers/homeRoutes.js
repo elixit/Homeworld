@@ -96,7 +96,7 @@ router.get('/planet/:id', (req, res) => {
         ],
         include: [
             {
-              model: Comment,
+              model: Comment,              
               attributes: ['id', 'comment_text', 'user_id', 'planet_id'],              
             },
             {
@@ -117,7 +117,7 @@ router.get('/planet/:id', (req, res) => {
             res.render('planet', {
                 Planet,                
                 loggedIn: req.session.log_in,
-                layout: 'main'                
+                layout: 'planlayout'                
             });
             
         })    
@@ -131,7 +131,7 @@ router.get('/planet/:id', (req, res) => {
 router.get('/about', withAuth, (req, res) => {
     let model = {
         loggedIn: req.session.log_in,
-        layout: 'explayout'
+        layout: 'main'
     }
     res.render('about', model)
     

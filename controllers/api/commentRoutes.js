@@ -6,9 +6,11 @@ const withAuth = require('../../utils/auth');
 
 router.post ('/', withAuth, (req , res) => {
     Comment.create({
+        // id: req.body.id,      
+        planet_id: req.body.planet_id,        
         comment_text: req.body.postContent,
-        user_id: req.session.user_id,
-        planet_id: req.body.planet_id
+        user_id: req.session.userid
+        
       })
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
@@ -37,17 +39,22 @@ router.delete('/:id', async (req, res)=> {
 // get one commment by its id 
 
 router.get('/:id', (req, res) => {
-    Comment.findOne({
+    Comment.findAll({
         where: {
-            id: req.params.id
+            planet_id: req.params.id
         },
         attributes: [
             'id',
             'comment_text',
             'user_id',
             'planet_id'
-
-        ],
+        ],        
+        include: [
+            {
+                model: User,
+                attributes: ['id', 'planet_id', 'username']
+            }
+        ]
     })
     .then(commentData => {
         if(!commentData){

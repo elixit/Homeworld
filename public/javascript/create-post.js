@@ -2,19 +2,18 @@ async function PostFormHandler(event) {
     event.preventDefault();
   
 
-    const id = document.querySelector('input[name="id"]').value;
-    const userid = document.querySelector('input[name="userid"]').value;
-    const planetid = document.querySelector('input[name="planetid"]').value;
-    const postContent = document.querySelector('input[name="post-content"]').value;
+    // const id = document.querySelector('input[name="id"]').value;    
+    const planet_id = document.querySelector('input[name="planetid"]').value;
+    const postContent = document.querySelector('textarea[name="post-content"]').value;
+    
 
   
     const response = await fetch(`/api/comments`, {
       method: 'POST',
       body: JSON.stringify({       
-        id,
-        userid,
-        planetid,
+        planet_id,
         postContent
+                
       }),
       headers: {
         'content-type': 'application/json'
