@@ -51,33 +51,32 @@
 
 <div id="planetComments">
   <section><h1>Comments</h1></section>
+  <br><br>
 
-  <div>
-    <div>
+  <div id="planetCommentPanel">
       
-      {{#if comments.length}}
-      {{#each comments as |Comment|}}
-      {{Comment.comment_text}}
-      
-    </div>
+      {{#if Planet.comments.length}}
+
+        {{#each Planet.comments as |Comment|}}
+        
+          {{Comment.comment_text}}
+    
       <div>
-        <b>{{username}}</b>
+        <i>Posted by: {{User.username}}</i> <br><br>
       </div>
+
+      {{/each}}
+
+    {{else}}
+  
+        <h6>There aren't any posts</h6>
+
+        
+    {{/if}}
+     
+
   </div>
 
-</div>
-
-  
-  {{else}}
-  
-<h6>There aren't any posts</h6>
-
-{{/each}} 
-{{/if}}
-  
-
-</div>
-
-            
+</div>            
 
 <script src="/javascript/create-post.js"></script>
