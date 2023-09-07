@@ -5,7 +5,7 @@ class Planet extends Model {}
 
 Planet.init(
     {
-        id: {
+          id: {
             type: DataTypes.INTEGER,            
             primaryKey: true,
             autoIncrement: true

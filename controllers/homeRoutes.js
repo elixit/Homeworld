@@ -1,6 +1,7 @@
 const router  = require('express').Router();
-const withAuth = require('../utils/auth');
+const sequelize = require('../config/connection')
 const { Planet, User, Comment } = require('../models')
+const withAuth = require('../utils/auth');
 
 const buildData = require('../utils/buildHelper');
 
@@ -31,13 +32,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
-router.get('/register', (req, res) => {
-    if (req.session.log_in) {
-        res.redirect('/');
-        return;
-    }
-    res.render('register');
-})
+
 
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
@@ -80,10 +75,10 @@ router.get('/explore', withAuth, (req, res) => {
 // and underneath that, a render of the single-post handlebar (ours is planet).
 // I wasn't able to get it to render, but I feel like this is the right track.
 
-router.get('/planet/:id', (req, res) => {        
+router.get('/planet/:id', withAuth, (req, res) => {        
     Planet.findOne({
         where: {
-            id: req.params.id
+            id: req.params.id,
         },
         attributes: [
             'id',
@@ -96,14 +91,14 @@ router.get('/planet/:id', (req, res) => {
         ],
         include: [
             {
-              model: Comment,
+              model: Comment,              
               attributes: ['id', 'comment_text', 'user_id', 'planet_id'],              
-            },
-            {
-              model: User,
-              attributes: ['id', 'username', 'planet_id']
-            }
-          ]
+              include: {
+                model: User,
+                attributes: ['id', 'username', 'planet_id']
+              }
+            },            
+        ],        
         })  
         
         .then(postData => {
@@ -112,12 +107,12 @@ router.get('/planet/:id', (req, res) => {
             return;
             }
 
-            const Planet = postData.get({ plain: true });                        
+            const Planet = postData.get({ plain: true });
 
             res.render('planet', {
                 Planet,                
                 loggedIn: req.session.log_in,
-                layout: 'main'                
+                layout: 'planlayout'                
             });
             
         })    
@@ -131,7 +126,7 @@ router.get('/planet/:id', (req, res) => {
 router.get('/about', withAuth, (req, res) => {
     let model = {
         loggedIn: req.session.log_in,
-        layout: 'explayout'
+        layout: 'main'
     }
     res.render('about', model)
     

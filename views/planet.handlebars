@@ -1,14 +1,8 @@
-    <div id="planetRow">
+       
 
-        <img src="/{{Planet.planet_photo}}" id="imgPlanet"></img>
-        
-    </div>    
-    
-    <div id="planetName">Planet {{Planet.planet_name}}</div> 
+<img id="hudPlanetSideA" src="/images/hud2.png">
 
-    <img id="hudPlanetSideA" src="/images/hud2.png">
-
-    <img id="hudPlanetSideB" src="/images/hud2.png">
+<img id="hudPlanetSideB" src="/images/hud2.png">
 
 <div id="planetFacts">
     <section id="factsTitle"><h1>Facts</h1></section>
@@ -21,54 +15,68 @@
         <p>
         Number of Moons: {{Planet.number_moons}}
         </p>
-      
-
+        {{Comment.comment_text}}
+        
 </div>
+
+<div id="centerHud">
+
+  <div id="planetName">Planet {{Planet.planet_name}}
+
+  </div> 
+
+  <div id="planet">
+    <img src="/{{Planet.planet_photo}}" id="imgPlanet"></img>
+    <p></p>
+
+  </div>
+
+  <div id="messageInput">
+    <form class="post-form">  
+      <div>
+        <p>
+        <label for="postContent"></label>
+        </p>
+        {{!-- <input type="hidden" name="id" id="id" value="{{Planet.id}}"/> --}}
+        <input type="hidden" name="planetid" id="planetid" value="{{Planet.id}}"/>      
+        <textarea id="postContent" name="post-content" placeholder="&nbsp;&nbsp;Share your thoughts about planet {{Planet.planet_name}}..." maxlength="180"></textarea>
+        <p>
+      </div>
+        <button id="commentSubmit" type="submit">Submit</button>
+        </p>
+    </form>
+  </div>
+
+</div>   
 
 <div id="planetComments">
-    <section id="commTitle"><h1>Comments</h1></section>
+  <section><h1>Comments</h1></section>
+  <br><br>
 
-  <form class="post-form">  
-    <div>
-      <p>
-      <label for="postContent"></label>
-      </p>
-      <input type="hidden" name="id" id="id" value="{{Planet.id}}"/>
-      <input type="hidden" name="userid" id="userid" value="{{User.id}}"/>      
-      <input type="hidden" name="planetid" id="planetid" value="{{Planet.Planet_id}}"/>      
-      <input id="postContent" name="post-content" placeholder="Message"/>
-      <p>
-    </div>
-    <button id="commentSubmit" type="submit">Submit</button>
-    </p>
-  </form>
+  <div id="planetCommentPanel">
+      
+      {{#if Planet.comments.length}}
 
-
+        {{#each Planet.comments as |Comment|}}
+        
+          {{Comment.comment_text}}
     
+      <div>
+        <i>Posted by: {{User.username}}</i> <br><br>
+      </div>
 
-</div>
+      {{/each}}
 
-<div id="planetResidents">
-
-
-<section id="resTitle"><h1>Comments</h1></section>
-
-{{#if comment.length}}
-
-{{#each comments as |comment|}}
-{{comment}}
-  {{/each}}
-
-  {{else}}
-<h6>There aren't any posts</h6>
-
-
-
+    {{else}}
   
-  {{/if}}
+        <h6>There aren't any posts</h6>
 
-</div>
+        
+    {{/if}}
+     
 
-            
+  </div>
+
+</div>            
 
 <script src="/javascript/create-post.js"></script>

@@ -7,13 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bjnstnkvc/alert/src/alert.css">     
-    <link rel="stylesheet" href="/css/solar.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@bjnstnkvc/alert/src/alert.css">    
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> --}}
 </head>
-<body>    
+<body>
+    <img class="bg" src="/images/background.jpg" />
             
-            {{#if loggedIn}}
+        {{#if loggedIn}}
             <img id="logo" src="/images/titleWh.png" />
             <div id="menu">
 
@@ -49,8 +50,7 @@
                             <div></div>
                             <div></div>
                             <div></div>
-                        </div>
-                        
+                        </div>                        
                         <a href="/explore" class="hex-content">
                             <span class="hex-content-inner">
                                 <span class="icon">
@@ -93,7 +93,7 @@
                             <div></div>
                             <div></div>
                         </div>
-                        <a href="about" class="hex-content">
+                        <a href="../about" class="hex-content">
                             <span class="hex-content-inner">
                                 <span class="icon">
                                     <i class="fa fa-life-ring"></i>
@@ -107,6 +107,13 @@
             
                 </div>
             </div>
+
+        <main>
+
+        {{{body}}}                        
+
+        </main>
+              
         {{else}}
             <img id="offlineLogo" src="/images/titleWh.png" />
             {{!-- <section id="offlineMenu">                                 --}}
@@ -114,21 +121,21 @@
                 
                 <a id="menuSignup" href="/register">Register</a> --}}
                 </p>
-            </section>
+            </section>       
+
+            {{{body}}}            
+
         {{/if}}  
     
-    <main>
-
-        {{{body}}}
-
-    </main>
+ 
 
     {{#if loggedIn}}
-        <script src="/javascript/logout.js"></script>        
-        <script src="/javascript/script.js"></script>
-        <script src="/javascript/solar.js"></script>
-    {{/if}}
 
+        <script src="/javascript/logout.js"></script>
+        
+    {{/if}}    
+
+{{!-- <script src="/javascript/script.js"></script> --}}
 <script src="https://cdn.jsdelivr.net/npm/@bjnstnkvc/alert/lib/Alert.min.js"></script>
 
 </body>
