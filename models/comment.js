@@ -27,7 +27,7 @@ Comment.init (
             type: DataTypes.INTEGER,
             references: {
               model: 'Planet', 
-              key: 'pid'
+              key: 'id'
             },
         
           }

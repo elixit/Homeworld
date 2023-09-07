@@ -3,6 +3,11 @@ async function loginFormHandler(event) {
   
     const username = document.querySelector('#loginUsername').value.trim();
     const password = document.querySelector('#loginPassword').value.trim();
+
+    if(username == '' || password == '') {
+      new Alert({duration: 5, type: 'error', message: 'Invalid username or password.', close: false});
+      return;
+    }  
   
     if (username && password) {
       const response = await fetch('/api/users/login', {
@@ -12,14 +17,12 @@ async function loginFormHandler(event) {
           password
         }),
         headers: { 'content-type': 'application/json' }
-      });
-      console.log(response)
+      });      
   
-
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert(response.statusText);
+        new Alert({duration: 5, type: 'error', message: 'Invalid username or password.', close: false});
       }
     }
   }
